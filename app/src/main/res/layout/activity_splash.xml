@@ -1,0 +1,23 @@
+<io.codetail.widget.RevealFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:id="@+id/splash_reveal"
+        android:background="@color/black">
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/splash_logo"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/next_logo"
+        android:layout_gravity="center"/>
+
+</io.codetail.widget.RevealFrameLayout>
+

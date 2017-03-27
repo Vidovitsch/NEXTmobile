@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "488624254338",
+    "firebase_url": "https://nextweek-b9a58.firebaseio.com",
+    "project_id": "nextweek-b9a58",
+    "storage_bucket": "nextweek-b9a58.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:488624254338:android:10b4a653e4fb7042",
+        "android_client_info": {
+          "package_name": "nextweek.fontys.next"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "488624254338-jlpr6onpl1kl0uo34hqnn2t8nbvm3f1c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "nextweek.fontys.next",
+            "certificate_hash": "8202fc1cb2847e17c2263356fbf48141d8f0c3bb"
+          }
+        },
+        {
+          "client_id": "488624254338-1bvjl059avdb993r0qn2n2rtsphk9fsb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-2nKxVjcMgq0S2XCaAqzi03zMlYVnSns"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "488624254338-1bvjl059avdb993r0qn2n2rtsphk9fsb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
