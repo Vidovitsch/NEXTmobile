@@ -40,36 +40,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SplashActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SplashActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Activities/SplashActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="175" column="35" selection-start-line="175" selection-start-column="35" selection-end-line="175" selection-end-column="35" />
+            <state relative-caret-position="1569">
+              <caret line="188" column="5" selection-start-line="170" selection-start-column="4" selection-end-line="188" selection-end-column="5" />
               <folding>
-                <element signature="e#6484#6714#0" expanded="true" />
-                <element signature="e#6713#6714#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="56" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="36" column="54" selection-start-line="36" selection-start-column="54" selection-end-line="36" selection-end-column="54" />
-              <folding>
-                <marker date="1490616236402" expanded="true" signature="556:1350" ph="{...}" />
+                <element signature="e#6483#6713#0" expanded="true" />
+                <element signature="e#6712#6713#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -78,8 +56,8 @@
       <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="6" column="78" selection-start-line="6" selection-start-column="78" selection-end-line="6" selection-end-column="78" />
+            <state relative-caret-position="68">
+              <caret line="4" column="64" selection-start-line="4" selection-start-column="64" selection-end-line="4" selection-end-column="64" />
               <folding />
             </state>
           </provider>
@@ -101,10 +79,33 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="activity_splash.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CameraPermission.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Permissions/CameraPermission.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="59" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="LogActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Activities/LogActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
+            <state relative-caret-position="731">
               <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
               <folding />
             </state>
@@ -134,11 +135,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ScanActivity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ScanActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Activities/ScanActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="19" selection-end-column="45" />
+            <state relative-caret-position="379">
+              <caret line="57" column="49" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1832#2394#0" expanded="true" />
+                <element signature="e#2393#2394#0" expanded="true" />
+                <element signature="e#4608#5332#0" expanded="true" />
+                <element signature="e#5331#5332#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Camera.java" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-24/android/hardware/Camera.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="373">
+              <caret line="1260" column="0" selection-start-line="1260" selection-start-column="0" selection-end-line="1260" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -298,11 +315,6 @@
                 <option name="name" value="packageDebug" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare com.journeyapps:zxing-android-embedded:3.0.2" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
-                <option name="name" value="prepareComJourneyappsZxingAndroidEmbedded302Library" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="compileReleaseNdk" />
               </ExternalTaskPojo>
@@ -377,6 +389,11 @@
                 <option name="description" value="Prepare com.android.support.test.espresso:espresso-idling-resource:2.2.2" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="prepareComAndroidSupportTestEspressoEspressoIdlingResource222Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare me.dm7.barcodescanner:core:1.8.4" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareMeDm7BarcodescannerCore184Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
@@ -965,6 +982,11 @@
                 <option name="name" value="prepareComAndroidSupportTestEspressoEspressoCore222Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Prepare me.dm7.barcodescanner:zxing:1.8.4" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
+                <option name="name" value="prepareMeDm7BarcodescannerZxing184Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="compileDebugAndroidTestRenderscript" />
               </ExternalTaskPojo>
@@ -1095,11 +1117,6 @@
                 <option name="name" value="packageDebug" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Prepare com.journeyapps:zxing-android-embedded:3.0.2" />
-                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
-                <option name="name" value="prepareComJourneyappsZxingAndroidEmbedded302Library" />
-              </ExternalTaskPojo>
-              <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="compileReleaseNdk" />
               </ExternalTaskPojo>
@@ -1174,6 +1191,11 @@
                 <option name="description" value="Prepare com.android.support.test.espresso:espresso-idling-resource:2.2.2" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="prepareComAndroidSupportTestEspressoEspressoIdlingResource222Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
+                <option name="description" value="Prepare me.dm7.barcodescanner:core:1.8.4" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareMeDm7BarcodescannerCore184Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
@@ -1758,6 +1780,11 @@
                 <option name="name" value="prepareComAndroidSupportTestEspressoEspressoCore222Library" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
+                <option name="description" value="Prepare me.dm7.barcodescanner:zxing:1.8.4" />
+                <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
+                <option name="name" value="prepareMeDm7BarcodescannerZxing184Library" />
+              </ExternalTaskPojo>
+              <ExternalTaskPojo>
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$/app" />
                 <option name="name" value="compileDebugAndroidTestRenderscript" />
               </ExternalTaskPojo>
@@ -1794,7 +1821,7 @@
     <option name="modificationStamps">
       <map>
         <entry key="C:\Users\David\Documents\Fontys\S4\PTS4\NEXTweek\Android\MyApplication" value="4461713876180" />
-        <entry key="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile" value="4468398194317" />
+        <entry key="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile" value="4468476132636" />
       </map>
     </option>
     <option name="projectBuildClasspath">
@@ -1974,9 +2001,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/SplashActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/IntentIntegrator.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/google/zxing/integration/android/IntentIntegrator.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_scan.xml" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/ScanActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/Activities/ScanActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/Activities/SplashActivity.java" />
@@ -1988,10 +2013,13 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_log.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Models/PropertyHandler.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Activities/LogActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Utility/Dialog.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Activities/ScanActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Activities/SplashActivity.java" />
+        <option value="$PROJECT_DIR$/app/build.gradle" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Permissions/CameraPermission.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_scan.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Activities/ScanActivity.java" />
       </list>
     </option>
   </component>
@@ -2048,6 +2076,50 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NEXTmobile" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NEXTmobile" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Permissions" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2134,7 +2206,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="device.picker.selection" value="0516055b9f281602" />
     <property name="UI_DESIGNER_EDITOR_MODE.NlPaletteManager-NlPreviewForm.SHOW" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../Fontys/Archieven/SM-TE4/Duo App/TheBeerGames" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/java" />
   </component>
   <component name="RecentsManager">
@@ -2536,7 +2608,8 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21843003" sideWeight="0.5030257" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5022272" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6262799" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2561,7 +2634,6 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -2582,32 +2654,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gradle.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/proguard-rules.pro">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -2624,8 +2675,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#6484#6714#0" expanded="true" />
-            <element signature="e#6713#6714#0" expanded="true" />
+            <element signature="e#6483#6713#0" expanded="true" />
+            <element signature="e#6712#6713#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2651,7 +2702,7 @@
         <state relative-caret-position="510">
           <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
           <folding>
-            <marker date="1490616236402" expanded="true" signature="556:1350" ph="{...}" />
+            <marker date="1490694174721" expanded="true" signature="556:1335" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2708,8 +2759,8 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#6484#6714#0" expanded="true" />
-            <element signature="e#6713#6714#0" expanded="true" />
+            <element signature="e#6483#6713#0" expanded="true" />
+            <element signature="e#6712#6713#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2718,6 +2769,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2725,6 +2777,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="64" selection-start-line="3" selection-start-column="64" selection-end-line="3" selection-end-column="64" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2744,8 +2797,8 @@
         <state relative-caret-position="170">
           <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
           <folding>
-            <element signature="e#6484#6714#0" expanded="true" />
-            <element signature="e#6713#6714#0" expanded="true" />
+            <element signature="e#6483#6713#0" expanded="true" />
+            <element signature="e#6712#6713#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2804,6 +2857,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2811,6 +2865,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="64" selection-start-line="3" selection-start-column="64" selection-end-line="3" selection-end-column="64" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2825,6 +2880,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2832,6 +2888,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2840,15 +2897,67 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/google/zxing/integration/android/IntentResult.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/google/zxing/integration/android/IntentIntegrator.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Data/Connector.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Data/Authentificator.java" />
+    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="119">
+          <caret line="7" column="56" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-designer2">
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Models/PropertyHandler.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Utility/Dialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="388">
+          <caret line="34" column="46" selection-start-line="34" selection-start-column="46" selection-end-line="34" selection-end-column="46" />
+          <folding>
+            <marker date="1490694174721" expanded="true" signature="556:1335" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="64" selection-start-line="4" selection-start-column="64" selection-end-line="4" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Data/Manipulator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Permissions/CameraPermission.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="9" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-24/android/os/MessageQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="542" column="0" selection-start-line="542" selection-start-column="0" selection-end-line="542" selection-end-column="0" />
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_scan.xml">
@@ -2862,7 +2971,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Data/Authentificator.java" />
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_log.xml">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -2874,75 +2982,54 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Data/Manipulator.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="340">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="56" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="54" selection-start-line="36" selection-start-column="54" selection-end-line="36" selection-end-column="54" />
-          <folding>
-            <marker date="1490616236402" expanded="true" signature="556:1350" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Models/PropertyHandler.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="6" column="78" selection-start-line="6" selection-start-column="78" selection-end-line="6" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest">
+      <provider editor-type-id="android-designer2">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-24/android/hardware/Camera.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="1260" column="0" selection-start-line="1260" selection-start-column="0" selection-end-line="1260" selection-end-column="0" />
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Activities/LogActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
+        <state relative-caret-position="731">
           <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Utility/Dialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Activities/ScanActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="19" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Activities/SplashActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="175" column="35" selection-start-line="175" selection-start-column="35" selection-end-line="175" selection-end-column="35" />
+        <state relative-caret-position="1569">
+          <caret line="188" column="5" selection-start-line="170" selection-start-column="4" selection-end-line="188" selection-end-column="5" />
           <folding>
-            <element signature="e#6484#6714#0" expanded="true" />
-            <element signature="e#6713#6714#0" expanded="true" />
+            <element signature="e#6483#6713#0" expanded="true" />
+            <element signature="e#6712#6713#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Activities/ScanActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="57" column="49" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1832#2394#0" expanded="true" />
+            <element signature="e#2393#2394#0" expanded="true" />
+            <element signature="e#4608#5332#0" expanded="true" />
+            <element signature="e#5331#5332#0" expanded="true" />
           </folding>
         </state>
       </provider>

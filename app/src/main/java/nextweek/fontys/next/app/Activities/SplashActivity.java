@@ -29,7 +29,6 @@ public class SplashActivity extends AppCompatActivity {
     private final static int ANIMATION_TIME_CONST = 1000;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private FirebaseAuth mAuth;
-
     private boolean signed;
 
     @Override
