@@ -43,11 +43,10 @@
       <file leaf-file-name="SplashActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Activities/SplashActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1569">
-              <caret line="188" column="5" selection-start-line="170" selection-start-column="4" selection-end-line="188" selection-end-column="5" />
+            <state relative-caret-position="22">
+              <caret line="32" column="57" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
               <folding>
-                <element signature="e#6483#6713#0" expanded="true" />
-                <element signature="e#6712#6713#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -55,14 +54,14 @@
       </file>
       <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="64" selection-start-line="4" selection-start-column="64" selection-end-line="4" selection-end-column="64" />
-              <folding />
-            </state>
-          </provider>
           <provider editor-type-id="android-manifest">
             <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="59" selection-start-line="5" selection-start-column="59" selection-end-line="5" selection-end-column="59" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -105,7 +104,7 @@
       <file leaf-file-name="LogActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Activities/LogActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
+            <state relative-caret-position="396">
               <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
               <folding />
             </state>
@@ -135,28 +134,119 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ScanActivity.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Activities/ScanActivity.java">
+      <file leaf-file-name="Camera.java" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-24/android/hardware/Camera.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="57" column="49" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
+            <state relative-caret-position="20502">
+              <caret line="1260" column="0" selection-start-line="1260" selection-start-column="0" selection-end-line="1260" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1832#2394#0" expanded="true" />
-                <element signature="e#2393#2394#0" expanded="true" />
-                <element signature="e#4608#5332#0" expanded="true" />
-                <element signature="e#5331#5332#0" expanded="true" />
+                <element signature="e#0#176543#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#14624#14625#0" expanded="false" />
+                <element signature="e#14667#14668#0" expanded="false" />
+                <element signature="e#21280#21281#0" expanded="false" />
+                <element signature="e#21318#21319#0" expanded="false" />
+                <element signature="e#21395#21396#0" expanded="false" />
+                <element signature="e#21430#21431#0" expanded="false" />
+                <element signature="e#21559#21560#0" expanded="false" />
+                <element signature="e#21584#21585#0" expanded="false" />
+                <element signature="e#68675#68676#0" expanded="false" />
+                <element signature="e#68735#68736#0" expanded="false" />
+                <element signature="e#79694#79695#0" expanded="false" />
+                <element signature="e#79729#79730#0" expanded="false" />
+                <element signature="e#83265#83266#0" expanded="false" />
+                <element signature="e#83318#83319#0" expanded="false" />
+                <element signature="e#104395#104396#0" expanded="false" />
+                <element signature="e#104482#104483#0" expanded="false" />
+                <element signature="e#104937#104938#0" expanded="false" />
+                <element signature="e#104979#104980#0" expanded="false" />
+                <element signature="e#107359#107360#0" expanded="false" />
+                <element signature="e#107399#107400#0" expanded="false" />
+                <element signature="e#108367#108368#0" expanded="false" />
+                <element signature="e#108424#108425#0" expanded="false" />
+                <element signature="e#110021#110022#0" expanded="false" />
+                <element signature="e#110065#110066#0" expanded="false" />
+                <element signature="e#110298#110299#0" expanded="false" />
+                <element signature="e#110360#110361#0" expanded="false" />
+                <element signature="e#116672#116673#0" expanded="false" />
+                <element signature="e#116737#116738#0" expanded="false" />
+                <element signature="e#117011#117012#0" expanded="false" />
+                <element signature="e#117065#117066#0" expanded="false" />
+                <element signature="e#117253#117254#0" expanded="false" />
+                <element signature="e#117308#117309#0" expanded="false" />
+                <element signature="e#117694#117695#0" expanded="false" />
+                <element signature="e#117750#117751#0" expanded="false" />
+                <element signature="e#118161#118162#0" expanded="false" />
+                <element signature="e#118222#118223#0" expanded="false" />
+                <element signature="e#135510#135511#0" expanded="false" />
+                <element signature="e#135563#135564#0" expanded="false" />
+                <element signature="e#137113#137114#0" expanded="false" />
+                <element signature="e#137159#137160#0" expanded="false" />
+                <element signature="e#137372#137373#0" expanded="false" />
+                <element signature="e#137418#137419#0" expanded="false" />
+                <element signature="e#138186#138187#0" expanded="false" />
+                <element signature="e#138237#138238#0" expanded="false" />
+                <element signature="e#138450#138451#0" expanded="false" />
+                <element signature="e#138507#138508#0" expanded="false" />
+                <element signature="e#139747#139748#0" expanded="false" />
+                <element signature="e#139797#139798#0" expanded="false" />
+                <element signature="e#140424#140425#0" expanded="false" />
+                <element signature="e#140474#140475#0" expanded="false" />
+                <element signature="e#141261#141262#0" expanded="false" />
+                <element signature="e#141311#141312#0" expanded="false" />
+                <element signature="e#141496#141497#0" expanded="false" />
+                <element signature="e#141546#141547#0" expanded="false" />
+                <element signature="e#142561#142562#0" expanded="false" />
+                <element signature="e#142611#142612#0" expanded="false" />
+                <element signature="e#142796#142797#0" expanded="false" />
+                <element signature="e#142846#142847#0" expanded="false" />
+                <element signature="e#143503#143504#0" expanded="false" />
+                <element signature="e#143573#143574#0" expanded="false" />
+                <element signature="e#144601#144602#0" expanded="false" />
+                <element signature="e#144668#144669#0" expanded="false" />
+                <element signature="e#145246#145247#0" expanded="false" />
+                <element signature="e#145307#145308#0" expanded="false" />
+                <element signature="e#145660#145661#0" expanded="false" />
+                <element signature="e#145731#145732#0" expanded="false" />
+                <element signature="e#146084#146085#0" expanded="false" />
+                <element signature="e#146155#146156#0" expanded="false" />
+                <element signature="e#153284#153285#0" expanded="false" />
+                <element signature="e#153334#153335#0" expanded="false" />
+                <element signature="e#153909#153910#0" expanded="false" />
+                <element signature="e#153953#153954#0" expanded="false" />
+                <element signature="e#154804#154805#0" expanded="false" />
+                <element signature="e#154858#154859#0" expanded="false" />
+                <element signature="e#155438#155439#0" expanded="false" />
+                <element signature="e#155499#155500#0" expanded="false" />
+                <element signature="e#158257#158258#0" expanded="false" />
+                <element signature="e#158322#158323#0" expanded="false" />
+                <element signature="e#160765#160766#0" expanded="false" />
+                <element signature="e#160827#160828#0" expanded="false" />
+                <element signature="e#161077#161078#0" expanded="false" />
+                <element signature="e#161133#161134#0" expanded="false" />
+                <element signature="e#161525#161526#0" expanded="false" />
+                <element signature="e#161593#161594#0" expanded="false" />
+                <element signature="e#163918#163919#0" expanded="false" />
+                <element signature="e#163983#163984#0" expanded="false" />
+                <element signature="e#164789#164790#0" expanded="false" />
+                <element signature="e#164860#164861#0" expanded="false" />
+                <element signature="e#165903#165904#0" expanded="false" />
+                <element signature="e#165971#165972#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Camera.java" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-24/android/hardware/Camera.java">
+      <file leaf-file-name="ScanActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Activities/ScanActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="1260" column="0" selection-start-line="1260" selection-start-column="0" selection-end-line="1260" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="365">
+              <caret line="67" column="34" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1801#1957#0" expanded="true" />
+                <element signature="e#1956#1957#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -2014,11 +2104,11 @@
         <option value="$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Models/PropertyHandler.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Activities/LogActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Utility/Dialog.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Activities/SplashActivity.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Permissions/CameraPermission.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_scan.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Activities/SplashActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Activities/ScanActivity.java" />
       </list>
     </option>
@@ -2054,8 +2144,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2117,32 +2208,6 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Permissions" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NEXTmobile" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -2196,7 +2261,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane" />
     </panes>
   </component>
@@ -2604,11 +2668,11 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16703786" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13388805" sideWeight="0.27986348" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13388805" sideWeight="0.2915811" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21843003" sideWeight="0.5030257" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6262799" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16894197" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2616,7 +2680,7 @@
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13388805" sideWeight="0.7201365" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13388805" sideWeight="0.7084189" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24962178" sideWeight="0.49317408" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -2675,8 +2739,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#6483#6713#0" expanded="true" />
-            <element signature="e#6712#6713#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2759,8 +2822,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#6483#6713#0" expanded="true" />
-            <element signature="e#6712#6713#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2797,8 +2859,7 @@
         <state relative-caret-position="170">
           <caret line="11" column="5" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
           <folding>
-            <element signature="e#6483#6713#0" expanded="true" />
-            <element signature="e#6712#6713#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2907,14 +2968,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Models/PropertyHandler.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Utility/Dialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Utility/Dialog.java" />
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="388">
@@ -2922,25 +2976,6 @@
           <folding>
             <marker date="1490694174721" expanded="true" signature="556:1335" ph="{...}" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="64" selection-start-line="4" selection-start-column="64" selection-end-line="4" selection-end-column="64" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Data/Manipulator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2956,19 +2991,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="322">
           <caret line="542" column="0" selection-start-line="542" selection-start-column="0" selection-end-line="542" selection-end-column="0" />
-          <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_scan.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_log.xml">
@@ -2995,41 +3018,161 @@
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-24/android/hardware/Camera.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
+        <state relative-caret-position="20502">
           <caret line="1260" column="0" selection-start-line="1260" selection-start-column="0" selection-end-line="1260" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#176543#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#14624#14625#0" expanded="false" />
+            <element signature="e#14667#14668#0" expanded="false" />
+            <element signature="e#21280#21281#0" expanded="false" />
+            <element signature="e#21318#21319#0" expanded="false" />
+            <element signature="e#21395#21396#0" expanded="false" />
+            <element signature="e#21430#21431#0" expanded="false" />
+            <element signature="e#21559#21560#0" expanded="false" />
+            <element signature="e#21584#21585#0" expanded="false" />
+            <element signature="e#68675#68676#0" expanded="false" />
+            <element signature="e#68735#68736#0" expanded="false" />
+            <element signature="e#79694#79695#0" expanded="false" />
+            <element signature="e#79729#79730#0" expanded="false" />
+            <element signature="e#83265#83266#0" expanded="false" />
+            <element signature="e#83318#83319#0" expanded="false" />
+            <element signature="e#104395#104396#0" expanded="false" />
+            <element signature="e#104482#104483#0" expanded="false" />
+            <element signature="e#104937#104938#0" expanded="false" />
+            <element signature="e#104979#104980#0" expanded="false" />
+            <element signature="e#107359#107360#0" expanded="false" />
+            <element signature="e#107399#107400#0" expanded="false" />
+            <element signature="e#108367#108368#0" expanded="false" />
+            <element signature="e#108424#108425#0" expanded="false" />
+            <element signature="e#110021#110022#0" expanded="false" />
+            <element signature="e#110065#110066#0" expanded="false" />
+            <element signature="e#110298#110299#0" expanded="false" />
+            <element signature="e#110360#110361#0" expanded="false" />
+            <element signature="e#116672#116673#0" expanded="false" />
+            <element signature="e#116737#116738#0" expanded="false" />
+            <element signature="e#117011#117012#0" expanded="false" />
+            <element signature="e#117065#117066#0" expanded="false" />
+            <element signature="e#117253#117254#0" expanded="false" />
+            <element signature="e#117308#117309#0" expanded="false" />
+            <element signature="e#117694#117695#0" expanded="false" />
+            <element signature="e#117750#117751#0" expanded="false" />
+            <element signature="e#118161#118162#0" expanded="false" />
+            <element signature="e#118222#118223#0" expanded="false" />
+            <element signature="e#135510#135511#0" expanded="false" />
+            <element signature="e#135563#135564#0" expanded="false" />
+            <element signature="e#137113#137114#0" expanded="false" />
+            <element signature="e#137159#137160#0" expanded="false" />
+            <element signature="e#137372#137373#0" expanded="false" />
+            <element signature="e#137418#137419#0" expanded="false" />
+            <element signature="e#138186#138187#0" expanded="false" />
+            <element signature="e#138237#138238#0" expanded="false" />
+            <element signature="e#138450#138451#0" expanded="false" />
+            <element signature="e#138507#138508#0" expanded="false" />
+            <element signature="e#139747#139748#0" expanded="false" />
+            <element signature="e#139797#139798#0" expanded="false" />
+            <element signature="e#140424#140425#0" expanded="false" />
+            <element signature="e#140474#140475#0" expanded="false" />
+            <element signature="e#141261#141262#0" expanded="false" />
+            <element signature="e#141311#141312#0" expanded="false" />
+            <element signature="e#141496#141497#0" expanded="false" />
+            <element signature="e#141546#141547#0" expanded="false" />
+            <element signature="e#142561#142562#0" expanded="false" />
+            <element signature="e#142611#142612#0" expanded="false" />
+            <element signature="e#142796#142797#0" expanded="false" />
+            <element signature="e#142846#142847#0" expanded="false" />
+            <element signature="e#143503#143504#0" expanded="false" />
+            <element signature="e#143573#143574#0" expanded="false" />
+            <element signature="e#144601#144602#0" expanded="false" />
+            <element signature="e#144668#144669#0" expanded="false" />
+            <element signature="e#145246#145247#0" expanded="false" />
+            <element signature="e#145307#145308#0" expanded="false" />
+            <element signature="e#145660#145661#0" expanded="false" />
+            <element signature="e#145731#145732#0" expanded="false" />
+            <element signature="e#146084#146085#0" expanded="false" />
+            <element signature="e#146155#146156#0" expanded="false" />
+            <element signature="e#153284#153285#0" expanded="false" />
+            <element signature="e#153334#153335#0" expanded="false" />
+            <element signature="e#153909#153910#0" expanded="false" />
+            <element signature="e#153953#153954#0" expanded="false" />
+            <element signature="e#154804#154805#0" expanded="false" />
+            <element signature="e#154858#154859#0" expanded="false" />
+            <element signature="e#155438#155439#0" expanded="false" />
+            <element signature="e#155499#155500#0" expanded="false" />
+            <element signature="e#158257#158258#0" expanded="false" />
+            <element signature="e#158322#158323#0" expanded="false" />
+            <element signature="e#160765#160766#0" expanded="false" />
+            <element signature="e#160827#160828#0" expanded="false" />
+            <element signature="e#161077#161078#0" expanded="false" />
+            <element signature="e#161133#161134#0" expanded="false" />
+            <element signature="e#161525#161526#0" expanded="false" />
+            <element signature="e#161593#161594#0" expanded="false" />
+            <element signature="e#163918#163919#0" expanded="false" />
+            <element signature="e#163983#163984#0" expanded="false" />
+            <element signature="e#164789#164790#0" expanded="false" />
+            <element signature="e#164860#164861#0" expanded="false" />
+            <element signature="e#165903#165904#0" expanded="false" />
+            <element signature="e#165971#165972#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Data/Manipulator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_scan.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Activities/LogActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
+        <state relative-caret-position="396">
           <caret line="59" column="5" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="59" selection-start-line="5" selection-start-column="59" selection-end-line="5" selection-end-column="59" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Activities/SplashActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1569">
-          <caret line="188" column="5" selection-start-line="170" selection-start-column="4" selection-end-line="188" selection-end-column="5" />
+        <state relative-caret-position="22">
+          <caret line="32" column="57" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
           <folding>
-            <element signature="e#6483#6713#0" expanded="true" />
-            <element signature="e#6712#6713#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Activities/ScanActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="57" column="49" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
+        <state relative-caret-position="365">
+          <caret line="67" column="34" selection-start-line="67" selection-start-column="34" selection-end-line="67" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1832#2394#0" expanded="true" />
-            <element signature="e#2393#2394#0" expanded="true" />
-            <element signature="e#4608#5332#0" expanded="true" />
-            <element signature="e#5331#5332#0" expanded="true" />
+            <element signature="e#1801#1957#0" expanded="true" />
+            <element signature="e#1956#1957#0" expanded="true" />
           </folding>
         </state>
       </provider>

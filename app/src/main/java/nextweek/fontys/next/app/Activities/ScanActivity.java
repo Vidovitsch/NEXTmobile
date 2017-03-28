@@ -1,5 +1,6 @@
 package nextweek.fontys.next.app.Activities;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
@@ -37,9 +38,8 @@ import static android.content.ContentValues.TAG;
 public class ScanActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
 
     private ZXingScannerView mScannerView;
-    private boolean permissionGiven = false;
-    private static final int REQUEST_GET_ACCOUNT = 112;
-    private static final int PERMISSION_REQUEST_CODE = 200;
+    private boolean permGranted = false;
+    private final static int MY_PERMISSIONS_REQUEST_CAMERA = 1;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,17 +48,10 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
 
         Button btn = (Button) findViewById(R.id.btn_scan);
         btn.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
-                if (checkForPermission()) {
-                    startScan();
-                } else {
-                    Log.d("Permission given", "sdfhasdfkahfkwhfawhfjkawhfjkagwukfgawegfjhkfuiagiuhiweuhf8");
-                    if (permissionGiven) {
-                        Log.d("Permission given 2", "sdfhasdfkahfkwhfawhfjkawhfjkagwukfgawegfjhkfuiagiuhiweuhf8");
-                        startScan();
-                    }
-                }
+                askCameraPermission();
             }
         });
     }
@@ -66,79 +59,70 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
     @Override
     public void handleResult(Result result) {
         showAlertDialog(result.getText(), result.getText());
+        setContentView(R.layout.activity_scan);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
         mScannerView.stopCamera();
     }
 
-    private void startScan() {
-        mScannerView = new ZXingScannerView(ScanActivity.this);
-        setContentView(mScannerView);
-        mScannerView.setResultHandler(ScanActivity.this);
-        mScannerView.startCamera(0);
-    }
+    private void askCameraPermission() {
+        // Here, thisActivity is the current activity
+        if (ContextCompat.checkSelfPermission(ScanActivity.this,
+                Manifest.permission.READ_CONTACTS)
+                != PackageManager.PERMISSION_GRANTED) {
 
-    private boolean checkForPermission() {
-        boolean permission = false;
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
-            if (!checkPermission()) {
-                requestPermission();
+            // Should we show an explanation?
+            if (ActivityCompat.shouldShowRequestPermissionRationale(ScanActivity.this,
+                    Manifest.permission.CAMERA)) {
+
+                // Show an explanation to the user *asynchronously* -- don't block
+                // this thread waiting for the user's response! After the user
+                // sees the explanation, try again to request the permission.
+
             } else {
-                permission = true;
+
+                // No explanation needed, we can request the permission.
+
+                ActivityCompat.requestPermissions(ScanActivity.this,
+                        new String[]{Manifest.permission.CAMERA},
+                        MY_PERMISSIONS_REQUEST_CAMERA);
+
+                // MY_PERMISSIONS_REQUEST_READ_CONTACTS is an
+                // app-defined int constant. The callback method gets the
+                // result of the request.
             }
         }
-        return permission;
     }
 
-    private boolean checkPermission() {
-        int result = ContextCompat.checkSelfPermission(getApplicationContext(), GET_ACCOUNTS);
-        int result1 = ContextCompat.checkSelfPermission(getApplicationContext(), CAMERA);
-
-        return result == PackageManager.PERMISSION_GRANTED && result1 == PackageManager.PERMISSION_GRANTED;
-    }
-
-    private void requestPermission() {
-        ActivityCompat.requestPermissions(this, new String[]{GET_ACCOUNTS, CAMERA}, REQUEST_GET_ACCOUNT);
-        ActivityCompat.requestPermissions(this, new String[]{WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE);
-    }
-
-    public void onRequestPermissionsResult(int requestCode, @NonNull  String permissions[], @NonNull int[] grantResults) {
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         switch (requestCode) {
-            case PERMISSION_REQUEST_CODE:
-                if (grantResults.length > 0) {
-                    boolean locationAccepted = grantResults[0] == PackageManager.PERMISSION_GRANTED;
-                    boolean cameraAccepted = grantResults[1] == PackageManager.PERMISSION_GRANTED;
-                    if (!(locationAccepted && cameraAccepted)) {
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                            if (shouldShowRequestPermissionRationale(WRITE_EXTERNAL_STORAGE)) {
-                                showMessageOKCancel("You need to allow access to both the permissions",
-                                        new DialogInterface.OnClickListener() {
-                                            @Override
-                                            public void onClick(DialogInterface dialog, int which) {
-                                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                                                    requestPermissions(new String[]{WRITE_EXTERNAL_STORAGE, READ_EXTERNAL_STORAGE},
-                                                            PERMISSION_REQUEST_CODE);
-                                                }
-                                                permissionGiven = true;
-                                            }
-                                        });
-                                return;
-                            }
-                        }
-                    }
+            case MY_PERMISSIONS_REQUEST_CAMERA: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                    Log.d("Permission granted", "YEAH!!!");
+                    mScannerView = new ZXingScannerView(ScanActivity.this);
+                    setContentView(mScannerView);
+                    mScannerView.setResultHandler(ScanActivity.this);
+                    mScannerView.startCamera(0);
+
+                } else {
+
+                    // permission denied, boo! Disable the
+                    // functionality that depends on this permission.
                 }
-                break;
+                return;
+            }
+
+            // other 'case' lines to check for other
+            // permissions this app might request
         }
     }
-
-    private void showMessageOKCancel(String message, DialogInterface.OnClickListener okListener) {
-        new android.support.v7.app.AlertDialog.Builder(ScanActivity.this)
-                .setMessage(message)
-                .setPositiveButton("OK", okListener)
-                .setNegativeButton("Cancel", null)
-                .create()
-                .show();
-    }
-
-
     /**
      * Shows an alert dialog
      * Closes application on cancel
