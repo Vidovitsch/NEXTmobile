@@ -1,9 +1,14 @@
 package nextweek.fontys.next.app.Activities;
 
 import android.animation.Animator;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Handler;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -68,10 +73,14 @@ public class SplashActivity extends AppCompatActivity {
                         new Handler().postDelayed(new Runnable() {
                             @Override
                             public void run() {
-                                if (signed) {
-                                    openScanActivity();
+                                if (checkConnectivity()) {
+                                    if (signed) {
+                                        openScanActivity();
+                                    } else {
+                                        openLogActivity();
+                                    }
                                 } else {
-                                    openLogActivity();
+                                    showAlertDialog("No Internet", "You have no internet connectivity");
                                 }
                             }
                         }, ANIMATION_TIME_CONST);
@@ -143,5 +152,40 @@ public class SplashActivity extends AppCompatActivity {
     private void openLogActivity() {
         Intent intent = new Intent(this, LogActivity.class);
         startActivity(intent);
+    }
+
+    /**
+     * Chekcs the conenctivity to the internet
+     * @return true if connected, else false
+     */
+    private boolean checkConnectivity() {
+        ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
+                connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    /**
+     * Shows an alert dialog
+     * Closes application on cancel
+     * @param title of the dialog
+     * @param message of the dialog
+     */
+    private void showAlertDialog(String title, String message) {
+        new AlertDialog.Builder(this)
+                .setTitle(title)
+                .setMessage(message)
+                .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                        System.exit(0);
+                    }
+                })
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
     }
 }
