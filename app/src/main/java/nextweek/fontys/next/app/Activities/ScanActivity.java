@@ -39,7 +39,6 @@ import static android.content.ContentValues.TAG;
 public class ScanActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
 
     private ZXingScannerView mScannerView;
-    private boolean permGranted = false;
     private final static int MY_PERMISSIONS_REQUEST_CAMERA = 1;
 
     @Override
@@ -66,7 +65,9 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
     @Override
     protected void onStop() {
         super.onStop();
-        mScannerView.stopCamera();
+        if (mScannerView != null) {
+            mScannerView.stopCamera();
+        }
     }
 
     private void askCameraPermission() {
@@ -106,7 +107,6 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
-                    Log.d("Permission granted", "YEAH!!!");
                     mScannerView = new ZXingScannerView(ScanActivity.this);
                     setContentView(mScannerView);
                     mScannerView.setResultHandler(ScanActivity.this);
