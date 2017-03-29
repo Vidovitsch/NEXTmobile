@@ -8,4 +8,7 @@
     <string name="btn_login">Login</string>
     <string name="input_email_hint">Fontys email</string>
     <string name="input_password_hint">Password</string>
+
+    <!-- Scan Activity -->
+    <string name="description_qr">Scan this!</string>
 </resources>

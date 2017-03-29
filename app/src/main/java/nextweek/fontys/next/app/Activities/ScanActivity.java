@@ -18,6 +18,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -46,7 +47,7 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan);
 
-        Button btn = (Button) findViewById(R.id.btn_scan);
+        ImageView btn = (ImageView) findViewById(R.id.btn_scan);
         btn.setOnClickListener(new View.OnClickListener() {
 
             @Override
