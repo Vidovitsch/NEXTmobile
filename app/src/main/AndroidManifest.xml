@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".app.Activities.ScanActivity" />
-        <activity android:name=".app.Activities.LogActivity"></activity>
+        <activity android:name=".app.Activities.LogActivity" />
     </application>
 
 </manifest>

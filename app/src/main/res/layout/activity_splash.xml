@@ -17,7 +17,8 @@
         android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:src="@drawable/next_logo"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:contentDescription="@string/description_next_logo"/>
 
 </io.codetail.widget.RevealFrameLayout>
 

@@ -147,6 +147,7 @@ public class SplashActivity extends AppCompatActivity {
     private void openScanActivity() {
         Intent intent = new Intent(this, ScanActivity.class);
         startActivity(intent);
+        finish();
     }
 
     /**
@@ -155,21 +156,17 @@ public class SplashActivity extends AppCompatActivity {
     private void openLogActivity() {
         Intent intent = new Intent(this, LogActivity.class);
         startActivity(intent);
+        finish();
     }
 
     /**
-     * Chekcs the conenctivity to the internet
+     * Checks the connectivity to the internet
      * @return true if connected, else false
      */
     private boolean checkConnectivity() {
         ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
-        if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
-                connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return (connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
+                connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED);
     }
 
     /**
@@ -191,6 +188,4 @@ public class SplashActivity extends AppCompatActivity {
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .show();
     }
-
-
 }

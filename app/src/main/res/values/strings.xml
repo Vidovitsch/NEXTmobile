@@ -1,4 +1,11 @@
 <resources>
+    <!-- Global -->
     <string name="app_name">NEXT</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="description_next_logo">NEXT week logo</string>
+
+    <!-- Log Activity -->
+    <string name="btn_login">Login</string>
+    <string name="input_email_hint">Fontys email</string>
+    <string name="input_password_hint">Password</string>
 </resources>
