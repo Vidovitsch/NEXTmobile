@@ -1,17 +1,13 @@
 package nextweek.fontys.next.app.Activities;
 
-import android.Manifest;
 import android.animation.Animator;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Handler;
 import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -45,15 +41,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user != null) {
-                    // User is signed in
-                    Log.d("SplashActivity", "onAuthStateChanged:signed_in:" + user.getEmail());
-                    signed = true;
-                } else {
-                    // User is signed out
-                    Log.d("SplashActivity", "onAuthStateChanged:signed_out");
-                    signed = false;
-                }
+                signed = (user != null);
             }
         };
 

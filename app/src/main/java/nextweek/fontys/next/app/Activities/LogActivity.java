@@ -47,7 +47,6 @@ public class LogActivity extends AppCompatActivity {
         ButterKnife.inject(this);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 login();
@@ -56,13 +55,11 @@ public class LogActivity extends AppCompatActivity {
     }
 
     public void login() {
-        Log.d(TAG, "Login");
-
         if (!validate()) {
+            Log.d("Logging in", "aksjdfahfioawehfihaweuifaweiofawefhawefawefawef");
             onLoginFailed();
             return;
         }
-
         btnLogin.setEnabled(false);
 
         final ProgressDialog progressDialog = new ProgressDialog(LogActivity.this,
@@ -71,53 +68,72 @@ public class LogActivity extends AppCompatActivity {
         progressDialog.setMessage("Authenticating...");
         progressDialog.show();
 
-        String email = txtEmail.getText().toString();
-        String password = txtPassword.getText().toString();
-
-        // TODO: Implement your own authentication logic here.
-
+        final String email = txtEmail.getText().toString();
+        final String password = txtPassword.getText().toString();
         new android.os.Handler().postDelayed(
                 new Runnable() {
                     public void run() {
-                        // On complete call either onLoginSuccess or onLoginFailed
-                        onLoginSuccess();
-                        // onLoginFailed();
-                        progressDialog.dismiss();
+                        mAuth.signInWithEmailAndPassword(email, password)
+                                .addOnCompleteListener(LogActivity.this, new OnCompleteListener<AuthResult>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<AuthResult> task) {
+                                        if (!task.isSuccessful()) {
+                                            onLoginFailed();
+                                        } else {
+                                            onLoginSuccess();
+                                        }
+                                        progressDialog.dismiss();
+                                    }
+                                });
                     }
                 }, 3000);
     }
 
     public void onLoginSuccess() {
         btnLogin.setEnabled(true);
+        openScanActivity();
         finish();
     }
 
     public void onLoginFailed() {
         Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
-
         btnLogin.setEnabled(true);
     }
 
     public boolean validate() {
         boolean valid = true;
-
         String email = txtEmail.getText().toString();
         String password = txtPassword.getText().toString();
 
+        //Email validation
         if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             txtEmail.setError("enter a valid email address");
             valid = false;
-        } else {
+        } else if (!email.contains("@student.fontys.nl")) {
+            txtEmail.setError("enter a Fontys email address");
+            valid = false;
+        }
+        else {
             txtEmail.setError(null);
         }
 
-        if (password.isEmpty() || password.length() < 4 || password.length() > 10) {
-            txtPassword.setError("between 4 and 10 alphanumeric characters");
+        //Password validation
+        if (password.isEmpty() || password.length() < 6 || password.length() > 16) {
+            txtPassword.setError("between 4 and 16 characters");
             valid = false;
         } else {
             txtPassword.setError(null);
         }
 
         return valid;
+    }
+
+    /**
+     * Switches to the scan activity.
+     */
+    private void openScanActivity() {
+        Intent intent = new Intent(this, ScanActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
