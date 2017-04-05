@@ -71,7 +71,7 @@ public class SplashActivity extends AppCompatActivity {
                                 showProgressDialog("Connecting...");
                                 if (checkConnectivity()) {
                                     if (signed) {
-                                        DBManipulator.getInstance().checkScanned(SplashActivity.this);
+                                        DBManipulator.getInstance().checkScannedSigned(SplashActivity.this);
                                     } else {
                                         dialog.dismiss();
                                         openLogActivity();
@@ -102,10 +102,10 @@ public class SplashActivity extends AppCompatActivity {
         }
     }
 
-    public void scannedCheck(boolean scanned) {
+    public void checkScannedSigned(boolean scanned, int groupLocation) {
         dialog.dismiss();
         if (scanned) {
-            openInfoActivity();
+            openInfoActivity(groupLocation);
         } else {
             openScanActivity();
         }
@@ -163,8 +163,9 @@ public class SplashActivity extends AppCompatActivity {
         finish();
     }
 
-    private void openInfoActivity() {
+    private void openInfoActivity(int groupLocation) {
         Intent intent = new Intent(this, InfoActivity.class);
+        intent.putExtra("groupLocation", String.valueOf(groupLocation));
         startActivity(intent);
         finish();
     }

@@ -43,8 +43,10 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
 
     @Override
     public void handleResult(Result result) {
+
+        //ToDo
         manipulator.validateScan(this, result.getText());
-        DBManipulator.getInstance().setScanned();
+        DBManipulator.getInstance().validateScan(this, result.getText());
     }
 
     @Override
@@ -55,10 +57,9 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
         }
     }
 
-    public void validateScan(int scannedID, int groupID) {
-        if (scannedID == groupID) {
-            manipulator.setScanned();
-            openInfoActivity();
+    public void validateScan(boolean valid, String groupLocation, String groupIDTaken) {
+        if (valid) {
+            openInfoActivity(groupLocation);
         } else {
             setContentView(R.layout.activity_scan);
             ImageView btn = (ImageView) findViewById(R.id.btn_scan);
@@ -69,8 +70,8 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
                     askCameraPermission();
                 }
             });
-            showAlertDialog("Invalid", "You are not allocated to this group!\n" +
-            "Look for group " + groupID + " instead");
+
+            showAlertDialog("Table taken", "This table is taken by group " + groupIDTaken);
         }
     }
 
@@ -146,8 +147,9 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
                 .show();
     }
 
-    private void openInfoActivity() {
+    private void openInfoActivity(String groupLocation) {
         Intent intent = new Intent(this, InfoActivity.class);
+        intent.putExtra("groupLocation", groupLocation);
         startActivity(intent);
         finish();
     }

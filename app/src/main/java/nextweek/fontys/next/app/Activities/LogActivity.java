@@ -15,6 +15,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import nextweek.fontys.next.R;
+import nextweek.fontys.next.app.Data.DBManipulator;
 
 public class LogActivity extends AppCompatActivity {
 
@@ -63,8 +64,15 @@ public class LogActivity extends AppCompatActivity {
 
     public void onLoginSuccess() {
         btnLogin.setEnabled(true);
-        openScanActivity();
-        finish();
+        DBManipulator.getInstance().checkScannedUnsigned(LogActivity.this);
+    }
+
+    public void checkScannedUnsigned(boolean scanned, int groupLocation) {
+        if (scanned) {
+            openInfoActivity(groupLocation);
+        } else {
+            openScanActivity();
+        }
     }
 
     public void onLoginFailed() {
@@ -105,6 +113,13 @@ public class LogActivity extends AppCompatActivity {
      */
     private void openScanActivity() {
         Intent intent = new Intent(this, ScanActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    private void openInfoActivity(int groupLocation) {
+        Intent intent = new Intent(this, InfoActivity.class);
+        intent.putExtra("groupLocation", String.valueOf(groupLocation));
         startActivity(intent);
         finish();
     }
