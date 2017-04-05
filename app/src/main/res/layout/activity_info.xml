@@ -34,5 +34,5 @@
         android:textSize="18sp"
         android:padding="15dp"
         android:layout_margin="15dp"
-        android:text="Uncheck table"/>
+        android:text="Un-check table"/>
 </FrameLayout>

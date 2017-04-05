@@ -28,8 +28,7 @@ public class InfoActivity extends AppCompatActivity {
         btnUncheck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DBManipulator.getInstance().setNewGroupLocation("0");
-                openScanActivity();
+                showAlertDialog("Are you sure?", "Are you sure you want to un-check your group from this table?");
             }
         });
     }
@@ -52,11 +51,13 @@ public class InfoActivity extends AppCompatActivity {
         new AlertDialog.Builder(this)
                 .setTitle(title)
                 .setMessage(message)
-                .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        finish();
-                        System.exit(0);
+                        openScanActivity();
                     }
+                })
+                .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) { }
                 })
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .show();
