@@ -1,40 +1,23 @@
 package nextweek.fontys.next.app.Activities;
 
 import android.Manifest;
-import android.app.Activity;
-import android.content.ActivityNotFoundException;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.hardware.Camera;
-import android.net.Uri;
-import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.zxing.Result;
-
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 import nextweek.fontys.next.R;
-
-import static android.Manifest.permission.CAMERA;
-import static android.Manifest.permission.GET_ACCOUNTS;
-import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
-import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
-import static android.content.ContentValues.TAG;
+import nextweek.fontys.next.app.Data.DBManipulator;
 
 public class ScanActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
 
@@ -58,8 +41,18 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
 
     @Override
     public void handleResult(Result result) {
+        DBManipulator.getInstance().setScanned();
         showAlertDialog(result.getText(), result.getText());
         setContentView(R.layout.activity_scan);
+
+        ImageView btn = (ImageView) findViewById(R.id.btn_scan);
+        btn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                askCameraPermission();
+            }
+        });
     }
 
     @Override
@@ -100,7 +93,7 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults) {
         switch (requestCode) {
             case MY_PERMISSIONS_REQUEST_CAMERA: {
                 // If request is cancelled, the result arrays are empty.

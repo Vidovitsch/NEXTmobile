@@ -1,6 +1,7 @@
 package nextweek.fontys.next.app.Activities;
 
 import android.animation.Animator;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -17,12 +18,14 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import io.codetail.animation.ViewAnimationUtils;
 import nextweek.fontys.next.R;
+import nextweek.fontys.next.app.Data.DBManipulator;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -30,11 +33,12 @@ public class SplashActivity extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener mAuthListener;
     private FirebaseAuth mAuth;
     private boolean signed;
+    private ProgressDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);;
+        setContentView(R.layout.activity_splash);
 
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
@@ -64,13 +68,16 @@ public class SplashActivity extends AppCompatActivity {
                         new Handler().postDelayed(new Runnable() {
                             @Override
                             public void run() {
+                                showProgressDialog("Connecting...");
                                 if (checkConnectivity()) {
                                     if (signed) {
-                                        openScanActivity();
+                                        DBManipulator.getInstance().checkScanned(SplashActivity.this);
                                     } else {
+                                        dialog.dismiss();
                                         openLogActivity();
                                     }
                                 } else {
+                                    dialog.dismiss();
                                     showAlertDialog("No Internet", "You have no internet connectivity");
                                 }
                             }
@@ -92,6 +99,15 @@ public class SplashActivity extends AppCompatActivity {
         super.onStop();
         if (mAuthListener != null) {
             mAuth.removeAuthStateListener(mAuthListener);
+        }
+    }
+
+    public void scannedCheck(boolean scanned) {
+        dialog.dismiss();
+        if (scanned) {
+            openInfoActivity();
+        } else {
+            openScanActivity();
         }
     }
 
@@ -145,6 +161,19 @@ public class SplashActivity extends AppCompatActivity {
         Intent intent = new Intent(this, LogActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    private void openInfoActivity() {
+        Intent intent = new Intent(this, InfoActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    private void showProgressDialog(String message) {
+        dialog = new ProgressDialog(this);
+        dialog.setMessage(message);
+        dialog.setTitle(null);
+        dialog.show();
     }
 
     /**

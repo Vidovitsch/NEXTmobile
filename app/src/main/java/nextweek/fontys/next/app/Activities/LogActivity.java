@@ -68,7 +68,6 @@ public class LogActivity extends AppCompatActivity {
     }
 
     public void onLoginFailed() {
-        Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
         btnLogin.setEnabled(true);
     }
 
@@ -81,10 +80,11 @@ public class LogActivity extends AppCompatActivity {
         if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             txtEmail.setError("enter a valid email address");
             valid = false;
-        } else if (!email.contains("fontys.nl")) {
-            txtEmail.setError("enter a Fontys email address");
-            valid = false;
         }
+//        else if (!email.contains("fontys.nl")) {
+//            txtEmail.setError("enter a Fontys email address");
+//            valid = false;
+//        }
         else {
             txtEmail.setError(null);
         }

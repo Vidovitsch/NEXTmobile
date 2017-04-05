@@ -3,291 +3,39 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="4d619a2fa3b17d7346ce45093d3fd28f33c7ea62">
-        <dex dex="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_b1340dc6b226c40df1774aad4b9e50fdc968288c\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\David\.android\build-cache\ac10e4f63c73c284a964351e204819674aa45ea2\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_9b82de1d025ef5378df01b7d1ff7f83c9a9cc765\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\David\.android\build-cache\f7b4e44601caefc6302c2d1c73765f77ae21a21b\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f19370c510080aa9cd3aa30cb7dcec9dc33f11ba\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\David\.android\build-cache\340183268324326ae0b6868c7f231a5289a222c5\output\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_b2eb498c0274b379afdb539ae348383dcbba02f3\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\David\.android\build-cache\149d8aa62b2d85ad66c52ce93e3cd514fceee042\output\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_ee68d2f345feefeb5d47307edd8b069b50a34857\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\David\.android\build-cache\79b7e3a1f9635c8c5c407f30040a38e614c0b964\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
-        <dex dex="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_8e324b0270f222af7890bd8624b8e8585a9cea90\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\David\.android\build-cache\8db61b416a0b7fc965ffb173e739b901ac19e9aa\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
-        <dex dex="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_069bde05b1699d5a8c226bc5b2f26a6fd1fa1bc2\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\David\.android\build-cache\28ee3c6e2c717f4a84b234a6c38d77cb5ec961eb\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="af8d42f1f020e936b8cd9f5cb6c75993194895a3">
-        <dex dex="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_20d29c6460dc13e03b5f21671c7a02bbae839dc7\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\David\.android\build-cache\6242e79adac4b91b2536f1c83c7d59281c526245\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_5056ff6df678fb49827e76d24a2e4251207a348e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\David\.android\build-cache\d4b9d33e1923b7823f0b5c8fcd55c17ef4f53839\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="4e01297e21f918ce3de5f20f1b7ab5682f125ff4">
-        <dex dex="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_92485d79f04cb9299506f7955465a92eb4164999\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\David\.android\build-cache\7a345eb3ef64f284b90a4f6b7bf649ec4a0294b9\output\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
-        <dex dex="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_510ebc8d31b6f0d5f12a1c279201368eb07b4c77\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\David\.android\build-cache\e257db332346d686c134e7643b9982a708bf6342\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="9cca2818594cc5348806d6662133491e7ea0fa8d">
-        <dex dex="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_dbea252eab131f6b70f9ab84885dee1a5af1e4aa\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\David\.android\build-cache\149d8aa62b2d85ad66c52ce93e3cd514fceee042\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_73ec8f7356d6aa26d18265d72446ad0672f8893a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\David\.android\build-cache\7f86797cd88a02cb1bf7254441ffe395bbd764fd\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
-        <dex dex="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_c8b7cae17dabfb507445d8da05f2645f289f9d48\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\David\.gradle\caches\modules-2\files-2.1\com.google.zxing\core\3.2.1\2287494d4f5f9f3a9a2bb6980e3f32053721b315\core-3.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="2287494d4f5f9f3a9a2bb6980e3f32053721b315">
-        <dex dex="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\core-3.2.1_287afe0e4dbe16461cb729fa6713c4e4b3df1804\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\David\.android\build-cache\8df9e639918bcbdbd32650b942d34001bfc87f63\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
-        <dex dex="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_3c780bc10913f293d3f3b6db1248475330fab154\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\David\.android\build-cache\7a345eb3ef64f284b90a4f6b7bf649ec4a0294b9\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_aa22c143e9ac2b5e20cc6d8d1a4109c1bc26c0cf\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
         jar="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
         <dex dex="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_9246e192091c123397cc4b23605143ab20b179f8\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\David\.android\build-cache\4f7fea4b056f3e5f79219d6dd40462ff84a6c28b\output\jars\classes.jar"
+        jar="C:\Users\David\.android\build-cache\cd091ad416443fd3d6b17a425b2dafa061b5aa18\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
-        <dex dex="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_c23a9ce889bae15b57c08997553bd367b2787376\classes.dex" />
+        sha1="8010ae6ed32828a145b25ec97bc07b7a83c6318f">
+        <dex dex="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e496d11998f70ba1609c5984beab14246158eb62\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\David\.android\build-cache\fe97e9c700e60f7668469b1e48fb4683c6453398\output\jars\classes.jar"
+        jar="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_ac827b6ec0af049c237c178141d7055bf19293a6\classes.dex" />
+        sha1="996934212f3577152981a9f894f8dd11afa05a12">
+        <dex dex="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_b1340dc6b226c40df1774aad4b9e50fdc968288c\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\David\.android\build-cache\29a762145bc933376689e62862cd2390fe7f786a\output\jars\classes.jar"
+        jar="C:\Users\David\.android\build-cache\daf0aac659c38912aa01fd683d10c96e5ceef0e7\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="c5e6490573cd2cc8018417f60ddd251138b6ed61">
-        <dex dex="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_511f12700449c1784231e7163a08fd5ecda9bd22\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\David\.android\build-cache\bb65e3398100029ced919e0399db68896781c7a8\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
-        <dex dex="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_6d999ed19ec9001cc077029598ac3ee6a102259a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\David\.android\build-cache\bfdae82ddf189eda754dd98f4597bbf641809210\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
-        <dex dex="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_316e86c4d658ac62a278314d2ce9226052b2506d\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\David\.android\build-cache\f7b4e44601caefc6302c2d1c73765f77ae21a21b\output\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
-        <dex dex="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_728c7dc41edc26f96b92b64670d139fef65ecf05\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\David\.android\build-cache\bc1715d3ae88823b28585ceda7e2035eca5c7be1\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="68ef1daf85c69fca8fddf7bbb947fc51cc9f8ca3">
-        <dex dex="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_77792c799ae085791b1da49fc519f48b738e6f5a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\David\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife\6.1.0\63735f48b82bcd24cdd33821342428252eb1ca5a\butterknife-6.1.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="63735f48b82bcd24cdd33821342428252eb1ca5a">
-        <dex dex="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\butterknife-6.1.0_ca47e6b8e69dcc2b16fb76d03015f27d1ea93327\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\David\.android\build-cache\15886a4cf781353321567f70857106eea0d11c15\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
-        <dex dex="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_dbcf6bb87b9e1c46a7aab46331fac87e0e708cbf\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\David\.android\build-cache\b7df73b3a1e4050f4dcc84474c233ac6c8672405\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
-        <dex dex="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_508677029ded3f1ce6f0d8bd0ca34edc689c5a2b\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\David\.android\build-cache\5c638245a13d9d5dd3f6e603011cda3715860e08\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
-        <dex dex="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_694bf72d93572bb22555cabe038fbd3b7be4731e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\David\.android\build-cache\340183268324326ae0b6868c7f231a5289a222c5\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
-        <dex dex="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b2f6e08b43260f4c2d644646b9ab367215f18e80\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\David\.android\build-cache\15886a4cf781353321567f70857106eea0d11c15\output\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="867dad63c33388ff8c7644b236579355036d075f">
-        <dex dex="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_efa2d1a861bd051df469b97c9bbec27405ab4723\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\David\.android\build-cache\38e9f29c2ad0f9e55756c5872f6ae5c8431346bd\output\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.2"
-        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
-        <dex dex="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_c1bde727be99ea2d6d5c9c6fcd03270400eea8b6\classes.dex" />
+        sha1="8f128aeeb7e31271b28a7adb9dac1f3a6ed9f5e7">
+        <dex dex="C:\Users\David\Documents\Projects\Java\NextWeek\AndroidApp\NEXTmobile\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_0f07d8dff3c98de97bc613763f93435c1256e0c7\classes.dex" />
     </item>
 
 </items>
