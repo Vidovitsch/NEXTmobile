@@ -2,6 +2,7 @@ package nextweek.fontys.next.app.Activities;
 
 import android.Manifest;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -23,6 +24,7 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
 
     private ZXingScannerView mScannerView;
     private final static int MY_PERMISSIONS_REQUEST_CAMERA = 1;
+    private  DBManipulator manipulator = DBManipulator.getInstance();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,18 +43,8 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
 
     @Override
     public void handleResult(Result result) {
+        manipulator.validateScan(this, result.getText());
         DBManipulator.getInstance().setScanned();
-        showAlertDialog(result.getText(), result.getText());
-        setContentView(R.layout.activity_scan);
-
-        ImageView btn = (ImageView) findViewById(R.id.btn_scan);
-        btn.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                askCameraPermission();
-            }
-        });
     }
 
     @Override
@@ -60,6 +52,25 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
         super.onStop();
         if (mScannerView != null) {
             mScannerView.stopCamera();
+        }
+    }
+
+    public void validateScan(int scannedID, int groupID) {
+        if (scannedID == groupID) {
+            manipulator.setScanned();
+            openInfoActivity();
+        } else {
+            setContentView(R.layout.activity_scan);
+            ImageView btn = (ImageView) findViewById(R.id.btn_scan);
+            btn.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View v) {
+                    askCameraPermission();
+                }
+            });
+            showAlertDialog("Invalid", "You are not allocated to this group!\n" +
+            "Look for group " + groupID + " instead");
         }
     }
 
@@ -133,5 +144,11 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
                 })
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .show();
+    }
+
+    private void openInfoActivity() {
+        Intent intent = new Intent(this, InfoActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

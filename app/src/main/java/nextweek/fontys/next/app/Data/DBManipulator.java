@@ -8,6 +8,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import nextweek.fontys.next.app.Activities.ScanActivity;
 import nextweek.fontys.next.app.Activities.SplashActivity;
 
 /**
@@ -30,6 +32,24 @@ public class DBManipulator {
             instance = new DBManipulator();
         }
         return instance;
+    }
+
+    public void validateScan(final ScanActivity activity, final String sID) {
+        String uid = fbUser.getUid();
+        DatabaseReference ref = database.child("User").child(uid).child("GroupID").getRef();
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                int groupID = Integer.valueOf(String.valueOf(dataSnapshot.getValue()));
+                int scannedID = Integer.valueOf(sID);
+                activity.validateScan(scannedID, groupID);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Log.e("getGroupByUser()", databaseError.toString());
+            }
+        });
     }
 
     public void setScanned() {
