@@ -1,6 +1,8 @@
 package nextweek.fontys.next.app.Data;
 
 import android.util.Log;
+
+import com.google.android.gms.ads.identifier.AdvertisingIdClient;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -9,6 +11,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import nextweek.fontys.next.app.Activities.InfoActivity;
 import nextweek.fontys.next.app.Activities.LogActivity;
 import nextweek.fontys.next.app.Activities.ScanActivity;
 import nextweek.fontys.next.app.Activities.SplashActivity;
@@ -64,6 +67,34 @@ public class DBManipulator {
             public void onCancelled(DatabaseError databaseError) { }
         });
 
+    }
+
+    public void checkScannedSigned(final InfoActivity activity) {
+        DatabaseReference ref = database.child("User").child(fbUser.getUid()).child("GroupID").getRef();
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String groupID = String.valueOf(dataSnapshot.getValue());
+                DatabaseReference ref = database.child("Group").child(groupID).child("Location").getRef();
+                ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        int location = Integer.valueOf(String.valueOf(dataSnapshot.getValue()));
+                        if (location == 0) {
+                            activity.openScanActivity();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                    }
+                });
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
     }
 
     public void checkScannedSigned(final SplashActivity activity) {
@@ -122,7 +153,7 @@ public class DBManipulator {
         });
     }
 
-    private void setNewGroupLocation(final String groupLocation) {
+    public void setNewGroupLocation(final String groupLocation) {
         DatabaseReference ref = database.child("User").child(fbUser.getUid()).child("GroupID").getRef();
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override

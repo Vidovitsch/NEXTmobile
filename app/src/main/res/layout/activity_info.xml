@@ -25,4 +25,14 @@
         android:layout_gravity="center"
         android:textSize="150sp"
         android:text="12"/>
+
+    <Button
+        android:id="@+id/btnUncheck"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:textSize="18sp"
+        android:padding="15dp"
+        android:layout_margin="15dp"
+        android:text="Uncheck table"/>
 </FrameLayout>

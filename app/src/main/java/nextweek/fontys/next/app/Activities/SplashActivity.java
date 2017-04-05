@@ -73,8 +73,8 @@ public class SplashActivity extends AppCompatActivity {
                                     if (signed) {
                                         DBManipulator.getInstance().checkScannedSigned(SplashActivity.this);
                                     } else {
-                                        dialog.dismiss();
                                         openLogActivity();
+                                        dialog.dismiss();
                                     }
                                 } else {
                                     dialog.dismiss();
