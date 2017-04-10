@@ -32,6 +32,10 @@ public class DBManipulator {
         setCurrentGroupID(fbUser);
     }
 
+    /**
+     * Gets the instance of this class
+     * @return instance of this class
+     */
     public static DBManipulator getInstance() {
         if (instance == null) {
             instance = new DBManipulator();
@@ -39,20 +43,37 @@ public class DBManipulator {
         return instance;
     }
 
+    /**
+     * Gets the current group location of signed in user.
+     * @return group location
+     */
     public int getCurrentGroupLocation() {
         return currentGroupLocation;
     }
 
+    /**
+     * Sets the current active activity within this class
+     * @param infoActivity currently active
+     */
     public void setInfoActivity(InfoActivity infoActivity) {
         this.infoActivity = infoActivity;
         scanActivity = null;
     }
 
+    /**
+     * Sets the current active activity within this class
+     * @param scanActivity currently active
+     */
     public void setScanActivity(ScanActivity scanActivity) {
         this.scanActivity = scanActivity;
         infoActivity = null;
     }
 
+    /**
+     * Validates the made scan.
+     * @param activity: scan activity
+     * @param groupLocation: scanned number
+     */
     public void validateScan(final ScanActivity activity, final int groupLocation) {
         DatabaseReference ref = database.child("Group").getRef();
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -75,11 +96,19 @@ public class DBManipulator {
 
     }
 
+    /**
+     * Sets the new scanned group location
+     * @param newGroupLocation of the current group
+     */
     public void setNewGroupLocation(int newGroupLocation) {
         currentGroupLocation = newGroupLocation;
         database.child("Group").child(currentGroupID).child("Location").setValue(newGroupLocation);
     }
 
+    /**
+     * Sets the groupID of the current group of the signed in user
+     * @param fbUser currently signed in
+     */
     private void setCurrentGroupID(FirebaseUser fbUser) {
         DatabaseReference ref = database.child("User").child(fbUser.getUid()).child("GroupID").getRef();
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -96,6 +125,10 @@ public class DBManipulator {
         });
     }
 
+    /**
+     * Sets the group location of the group of the signed in user.
+     * @param currentGroupID of the group of the signed in user.
+     */
     private void setCurrentGroupLocation(final String currentGroupID) {
         DatabaseReference ref = database.child("Group").child(currentGroupID).child("Location").getRef();
         ref.addValueEventListener(new ValueEventListener() {
@@ -110,6 +143,9 @@ public class DBManipulator {
         });
     }
 
+    /**
+     * Updates the currently active activity on location change (within Firebase)
+     */
     private void updateActivities() {
         if (infoActivity != null) {
             infoActivity.updateGroupLocation();

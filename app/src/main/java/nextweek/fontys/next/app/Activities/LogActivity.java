@@ -44,6 +44,9 @@ public class LogActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Sings in a user.
+     */
     public void login() {
         if (!validate()) {
             btnLogin.setEnabled(true);
@@ -74,6 +77,10 @@ public class LogActivity extends AppCompatActivity {
             });
     }
 
+    /**
+     * Runs when all the user data has been retrieved from de Firebase database.
+     * @param groupLocation of the signed in user.
+     */
     public void onLoginSuccess(int groupLocation) {
         progressDialog.dismiss();
         if (groupLocation != 0) {
@@ -83,6 +90,10 @@ public class LogActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Validates all the input-fields before submitter their values.
+     * @return true if valid, else false.
+     */
     public boolean validate() {
         boolean valid = true;
         String email = txtEmail.getText().toString();
@@ -112,6 +123,9 @@ public class LogActivity extends AppCompatActivity {
         return valid;
     }
 
+    /**
+     * Shows an progress dialog while authenticating an user
+     */
     private void showAuthProgress() {
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("Authenticating...");

@@ -48,6 +48,11 @@ public class InfoActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Updates the current group location.
+     * If the location is changed to a positive number it changes the text within the screen.
+     * If the location is changed to 0 the activity switches to the scan activity.
+     */
     public void updateGroupLocation() {
         int groupLocation = manipulator.getCurrentGroupLocation();
         if (groupLocation != 0) {
