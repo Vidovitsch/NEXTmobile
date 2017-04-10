@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,7 +14,7 @@
         android:textAlignment="center"
         android:textSize="30sp"
         android:padding="25dp"
-        android:text="Your group is seated at table number"/>
+        android:text="@string/info_txtHeader"/>
 
     <TextView
         android:id="@+id/txtLocation"
@@ -33,5 +32,5 @@
         android:textSize="18sp"
         android:padding="15dp"
         android:layout_margin="15dp"
-        android:text="Un-check table"/>
+        android:text="@string/info_btnUnCheck"/>
 </FrameLayout>

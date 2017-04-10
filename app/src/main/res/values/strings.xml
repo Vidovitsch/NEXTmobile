@@ -11,4 +11,9 @@
 
     <!-- Scan Activity -->
     <string name="description_qr">Scan this!</string>
+    <string name="scan_txtHeader">Tap the image below to scan a QR-code on a table</string>
+
+    <!-- Info Activity -->
+    <string name="info_txtHeader">Your group is seated at table number</string>
+    <string name="info_btnUnCheck">Un-check table</string>
 </resources>
