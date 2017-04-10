@@ -2,7 +2,6 @@ package nextweek.fontys.next.app.Activities;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,6 +22,7 @@ public class LogActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private ProgressDialog progressDialog;
+    private DBManipulator manipulator;
 
     @InjectView(R.id.input_email) EditText txtEmail;
     @InjectView(R.id.input_password) EditText txtPassword;
@@ -32,6 +32,9 @@ public class LogActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log);
+
+        manipulator = DBManipulator.getInstance();
+        manipulator.setLogActivity(this);
 
         mAuth = FirebaseAuth.getInstance();
         ButterKnife.inject(this);
@@ -60,19 +63,15 @@ public class LogActivity extends AppCompatActivity {
             .addOnCompleteListener(LogActivity.this, new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
-                if (!task.isSuccessful()) {
-                    progressDialog.dismiss();
-                    btnLogin.setEnabled(true);
-                    Toast.makeText(LogActivity.this, "Incorrect username or password", Toast.LENGTH_SHORT).show();
-                } else {
-                    final DBManipulator manipulator = DBManipulator.getInstance();
-                    new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            onLoginSuccess(manipulator.getCurrentGroupLocation());
-                        }
-                    }, 2000);
-                }
+                    if (!task.isSuccessful()) {
+                        progressDialog.dismiss();
+                        btnLogin.setEnabled(true);
+                        Toast.makeText(LogActivity.this, "Incorrect username or password", Toast.LENGTH_SHORT).show();
+                    } else {
+                        //Reset all fields set in de DBManipulator constructor
+                        manipulator.setSignedInUser();
+                        manipulator.setCurrentGroupID();
+                    }
                 }
             });
     }

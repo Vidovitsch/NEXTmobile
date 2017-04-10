@@ -46,7 +46,6 @@ public class SplashActivity extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
-                    Log.d(user.getEmail(), "TestTestTest");
                     manipulator = DBManipulator.getInstance();
                     signed = true;
                 } else {
