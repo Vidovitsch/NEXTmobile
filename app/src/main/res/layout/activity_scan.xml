@@ -16,7 +16,7 @@
         android:paddingTop="50dp"
         android:textSize="30sp"
         android:textColor="@color/white"
-        android:text="Tap the image below to scan your group's QR-code" />
+        android:text="Tap the image below to scan a QR-code on a table" />
 
     <ImageView
         android:id="@+id/btn_scan"

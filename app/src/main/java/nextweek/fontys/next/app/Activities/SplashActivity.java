@@ -18,10 +18,16 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import io.codetail.animation.ViewAnimationUtils;
 import nextweek.fontys.next.R;
@@ -33,7 +39,8 @@ public class SplashActivity extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener mAuthListener;
     private FirebaseAuth mAuth;
     private boolean signed;
-    private ProgressDialog dialog;
+
+    private DBManipulator manipulator = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,11 +48,18 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
         mAuth = FirebaseAuth.getInstance();
+        mAuth.signOut();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
-                signed = (user != null);
+                if (user != null) {
+                    Log.d(user.getEmail(), "TestTestTest");
+                    manipulator = DBManipulator.getInstance();
+                    signed = true;
+                } else {
+                    signed = false;
+                }
             }
         };
 
@@ -68,16 +82,18 @@ public class SplashActivity extends AppCompatActivity {
                         new Handler().postDelayed(new Runnable() {
                             @Override
                             public void run() {
-                                showProgressDialog("Connecting...");
                                 if (checkConnectivity()) {
                                     if (signed) {
-                                        DBManipulator.getInstance().checkScannedSigned(SplashActivity.this);
+                                        int groupLocation = manipulator.getCurrentGroupLocation();
+                                        if (groupLocation != 0) {
+                                            openInfoActivity();
+                                        } else {
+                                            openScanActivity();
+                                        }
                                     } else {
                                         openLogActivity();
-                                        dialog.dismiss();
                                     }
                                 } else {
-                                    dialog.dismiss();
                                     showAlertDialog("No Internet", "You have no internet connectivity");
                                 }
                             }
@@ -99,15 +115,6 @@ public class SplashActivity extends AppCompatActivity {
         super.onStop();
         if (mAuthListener != null) {
             mAuth.removeAuthStateListener(mAuthListener);
-        }
-    }
-
-    public void checkScannedSigned(boolean scanned, int groupLocation) {
-        dialog.dismiss();
-        if (scanned) {
-            openInfoActivity(groupLocation);
-        } else {
-            openScanActivity();
         }
     }
 
@@ -163,18 +170,13 @@ public class SplashActivity extends AppCompatActivity {
         finish();
     }
 
-    private void openInfoActivity(int groupLocation) {
+    /**
+     * Switches to the info activity
+     */
+    private void openInfoActivity() {
         Intent intent = new Intent(this, InfoActivity.class);
-        intent.putExtra("groupLocation", String.valueOf(groupLocation));
         startActivity(intent);
         finish();
-    }
-
-    private void showProgressDialog(String message) {
-        dialog = new ProgressDialog(this);
-        dialog.setMessage(message);
-        dialog.setTitle(null);
-        dialog.show();
     }
 
     /**

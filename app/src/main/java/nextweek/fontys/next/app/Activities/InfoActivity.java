@@ -9,20 +9,35 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import org.w3c.dom.Text;
+
 import nextweek.fontys.next.R;
 import nextweek.fontys.next.app.Data.DBManipulator;
 
 public class InfoActivity extends AppCompatActivity {
+
+    private TextView txtLocation = null;
+    private DBManipulator manipulator = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
 
-        String groupLocation = getIntent().getStringExtra("groupLocation");
+        txtLocation = (TextView) findViewById(R.id.txtLocation);
 
-        TextView location = (TextView) findViewById(R.id.txtLocation);
-        location.setText(groupLocation);
+        manipulator = DBManipulator.getInstance();
+        manipulator.setInfoActivity(this);
+
+        updateGroupLocation();
 
         Button btnUncheck = (Button) findViewById(R.id.btnUncheck);
         btnUncheck.setOnClickListener(new View.OnClickListener() {
@@ -31,6 +46,15 @@ public class InfoActivity extends AppCompatActivity {
                 showAlertDialog("Are you sure?", "Are you sure you want to un-check your group from this table?");
             }
         });
+    }
+
+    public void updateGroupLocation() {
+        int groupLocation = manipulator.getCurrentGroupLocation();
+        if (groupLocation != 0) {
+            txtLocation.setText(String.valueOf(groupLocation));
+        } else {
+            openScanActivity();
+        }
     }
 
     /**
@@ -53,6 +77,7 @@ public class InfoActivity extends AppCompatActivity {
                 .setMessage(message)
                 .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
+                        DBManipulator.getInstance().setNewGroupLocation(0);
                         openScanActivity();
                     }
                 })

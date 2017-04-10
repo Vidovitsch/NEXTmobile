@@ -1,8 +1,8 @@
 package nextweek.fontys.next.app.Data;
 
+import android.os.Handler;
 import android.util.Log;
 
-import com.google.android.gms.ads.identifier.AdvertisingIdClient;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -12,9 +12,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import nextweek.fontys.next.app.Activities.InfoActivity;
-import nextweek.fontys.next.app.Activities.LogActivity;
 import nextweek.fontys.next.app.Activities.ScanActivity;
-import nextweek.fontys.next.app.Activities.SplashActivity;
 
 /**
  * Created by David on 27-3-2017.
@@ -24,14 +22,17 @@ public class DBManipulator {
 
     private static DBManipulator instance = null;
     private DatabaseReference database;
-    private FirebaseUser fbUser = null;
 
-    private boolean locationTaken = false;
-    private String locationTakenGroupID;
+    private String currentGroupID = null;
+    private int currentGroupLocation = -1;
+
+    private InfoActivity infoActivity = null;
+    private ScanActivity scanActivity = null;
 
     private DBManipulator() {
         database = FirebaseDatabase.getInstance().getReference();
-        fbUser = FirebaseAuth.getInstance().getCurrentUser();
+        FirebaseUser fbUser = FirebaseAuth.getInstance().getCurrentUser();
+        setCurrentGroupID(fbUser);
     }
 
     public static DBManipulator getInstance() {
@@ -41,26 +42,34 @@ public class DBManipulator {
         return instance;
     }
 
-    public void validateScan(final ScanActivity activity, final String groupLocation) {
+    public int getCurrentGroupLocation() {
+        return currentGroupLocation;
+    }
+
+    public void setInfoActivity(InfoActivity infoActivity) {
+        this.infoActivity = infoActivity;
+        scanActivity = null;
+    }
+
+    public void setScanActivity(ScanActivity scanActivity) {
+        this.scanActivity = scanActivity;
+        infoActivity = null;
+    }
+
+    public void validateScan(final ScanActivity activity, final int groupLocation) {
         DatabaseReference ref = database.child("Group").getRef();
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    String location = String.valueOf(snapshot.child("Location").getValue());
-                    if (location.equals(groupLocation)) {
-                        locationTaken = true;
-                        locationTakenGroupID = String.valueOf(snapshot.getKey());
+                    int location = Integer.valueOf(String.valueOf(snapshot.child("Location").getValue()));
+                    if (location == groupLocation) {
+                        activity.validateScan(false, Integer.valueOf(String.valueOf(snapshot.getKey())));
+                        return;
                     }
                 }
-
-                if (locationTaken) {
-                    activity.validateScan(false, groupLocation, locationTakenGroupID);
-                    locationTaken = false;
-                } else {
-                    setNewGroupLocation(groupLocation);
-                    activity.validateScan(true, groupLocation, null);
-                }
+                setNewGroupLocation(groupLocation);
+                activity.validateScan(true, 0);
             }
 
             @Override
@@ -69,55 +78,20 @@ public class DBManipulator {
 
     }
 
-    public void checkScannedSigned(final InfoActivity activity) {
-        DatabaseReference ref = database.child("User").child(fbUser.getUid()).child("GroupID").getRef();
-        ref.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                String groupID = String.valueOf(dataSnapshot.getValue());
-                DatabaseReference ref = database.child("Group").child(groupID).child("Location").getRef();
-                ref.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        int location = Integer.valueOf(String.valueOf(dataSnapshot.getValue()));
-                        if (location == 0) {
-                            activity.openScanActivity();
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-                    }
-                });
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-            }
-        });
+    public void setNewGroupLocation(int newGroupLocation) {
+        currentGroupLocation = newGroupLocation;
+        database.child("Group").child(currentGroupID).child("Location").setValue(newGroupLocation);
     }
 
-    public void checkScannedSigned(final SplashActivity activity) {
+    private void setCurrentGroupID(FirebaseUser fbUser) {
         DatabaseReference ref = database.child("User").child(fbUser.getUid()).child("GroupID").getRef();
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String groupID = String.valueOf(dataSnapshot.getValue());
-                DatabaseReference ref = database.child("Group").child(groupID).child("Location").getRef();
-                ref.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        int location = Integer.valueOf(String.valueOf(dataSnapshot.getValue()));
-                        if (location != 0) {
-                            activity.checkScannedSigned(true, location);
-                        } else {
-                            activity.checkScannedSigned(false, 0);
-                        }
-                    }
+                currentGroupID = String.valueOf(dataSnapshot.getValue());
 
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) { }
-                });
+                //Chain-method to ensure it gets called only when this method is done
+                setCurrentGroupLocation(currentGroupID);
             }
 
             @Override
@@ -125,27 +99,13 @@ public class DBManipulator {
         });
     }
 
-    public void checkScannedUnsigned(final LogActivity activity) {
-        DatabaseReference ref = database.child("User").child(fbUser.getUid()).child("GroupID").getRef();
-        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+    private void setCurrentGroupLocation(final String currentGroupID) {
+        DatabaseReference ref = database.child("Group").child(currentGroupID).child("Location").getRef();
+        ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String groupID = String.valueOf(dataSnapshot.getValue());
-                DatabaseReference ref = database.child("Group").child(groupID).child("Location").getRef();
-                ref.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        int location = Integer.valueOf(String.valueOf(dataSnapshot.getValue()));
-                        if (location != 0) {
-                            activity.checkScannedUnsigned(true, location);
-                        } else {
-                            activity.checkScannedUnsigned(false, 0);
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) { }
-                });
+                currentGroupLocation = Integer.valueOf(String.valueOf(dataSnapshot.getValue()));
+                updateActivities();
             }
 
             @Override
@@ -153,17 +113,12 @@ public class DBManipulator {
         });
     }
 
-    public void setNewGroupLocation(final String groupLocation) {
-        DatabaseReference ref = database.child("User").child(fbUser.getUid()).child("GroupID").getRef();
-        ref.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                String groupID = String.valueOf(dataSnapshot.getValue());
-                database.child("Group").child(groupID).child("Location").setValue(groupLocation);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) { }
-        });
+    private void updateActivities() {
+        if (infoActivity != null) {
+            infoActivity.updateGroupLocation();
+        }
+        if (scanActivity != null) {
+            scanActivity.openInfoActivity();
+        }
     }
 }

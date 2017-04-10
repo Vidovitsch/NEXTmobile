@@ -52,6 +52,5 @@
                 android:layout_marginBottom="24dp"
                 android:padding="12dp"
                 android:text="@string/btn_login"/>
-
     </LinearLayout>
 </ScrollView>

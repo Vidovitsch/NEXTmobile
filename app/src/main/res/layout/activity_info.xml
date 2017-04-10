@@ -23,8 +23,7 @@
         android:layout_height="wrap_content"
         android:textColor="@color/white"
         android:layout_gravity="center"
-        android:textSize="150sp"
-        android:text="12"/>
+        android:textSize="150sp" />
 
     <Button
         android:id="@+id/btnUncheck"

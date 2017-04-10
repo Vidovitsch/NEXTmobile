@@ -24,12 +24,15 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
 
     private ZXingScannerView mScannerView;
     private final static int MY_PERMISSIONS_REQUEST_CAMERA = 1;
-    private  DBManipulator manipulator = DBManipulator.getInstance();
+    private  DBManipulator manipulator;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan);
+
+        manipulator = DBManipulator.getInstance();
+        manipulator.setScanActivity(this);
 
         ImageView btn = (ImageView) findViewById(R.id.btn_scan);
         btn.setOnClickListener(new View.OnClickListener() {
@@ -43,10 +46,7 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
 
     @Override
     public void handleResult(Result result) {
-
-        //ToDo
-        manipulator.validateScan(this, result.getText());
-        DBManipulator.getInstance().validateScan(this, result.getText());
+        manipulator.validateScan(this, Integer.valueOf(result.getText()));
     }
 
     @Override
@@ -57,9 +57,9 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
         }
     }
 
-    public void validateScan(boolean valid, String groupLocation, String groupIDTaken) {
+    public void validateScan(boolean valid, int groupIDTaken) {
         if (valid) {
-            openInfoActivity(groupLocation);
+            openInfoActivity();
         } else {
             setContentView(R.layout.activity_scan);
             ImageView btn = (ImageView) findViewById(R.id.btn_scan);
@@ -129,6 +129,13 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
             // permissions this app might request
         }
     }
+
+    public void openInfoActivity() {
+        Intent intent = new Intent(this, InfoActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
     /**
      * Shows an alert dialog
      * Closes application on cancel
@@ -145,12 +152,5 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
                 })
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .show();
-    }
-
-    private void openInfoActivity(String groupLocation) {
-        Intent intent = new Intent(this, InfoActivity.class);
-        intent.putExtra("groupLocation", groupLocation);
-        startActivity(intent);
-        finish();
     }
 }

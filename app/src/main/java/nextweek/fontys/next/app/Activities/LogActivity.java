@@ -1,9 +1,12 @@
 package nextweek.fontys.next.app.Activities;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,6 +23,7 @@ import nextweek.fontys.next.app.Data.DBManipulator;
 public class LogActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
+    private ProgressDialog progressDialog;
 
     @InjectView(R.id.input_email) EditText txtEmail;
     @InjectView(R.id.input_password) EditText txtPassword;
@@ -43,9 +47,11 @@ public class LogActivity extends AppCompatActivity {
 
     public void login() {
         if (!validate()) {
-            onLoginFailed();
+            btnLogin.setEnabled(true);
+            Toast.makeText(this, "Incorrect username or password", Toast.LENGTH_SHORT).show();
             return;
         }
+        showAuthProgress();
         final String email = txtEmail.getText().toString();
         final String password = txtPassword.getText().toString();
         mAuth.signInWithEmailAndPassword(email, password)
@@ -53,30 +59,29 @@ public class LogActivity extends AppCompatActivity {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                 if (!task.isSuccessful()) {
-                    onLoginFailed();
+                    progressDialog.dismiss();
+                    btnLogin.setEnabled(true);
+                    Toast.makeText(LogActivity.this, "Incorrect username or password", Toast.LENGTH_SHORT).show();
                 } else {
-                    onLoginSuccess();
+                    DBManipulator manipulator = DBManipulator.getInstance();
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            onLoginSuccess(manipulator.getCurrentGroupLocation());
+                        }
+                    }, 2000);
                 }
                 }
             });
     }
 
-
-    public void onLoginSuccess() {
-        btnLogin.setEnabled(true);
-        DBManipulator.getInstance().checkScannedUnsigned(LogActivity.this);
-    }
-
-    public void checkScannedUnsigned(boolean scanned, int groupLocation) {
-        if (scanned) {
-            openInfoActivity(groupLocation);
+    public void onLoginSuccess(int groupLocation) {
+        progressDialog.dismiss();
+        if (groupLocation != 0) {
+            openInfoActivity();
         } else {
             openScanActivity();
         }
-    }
-
-    public void onLoginFailed() {
-        btnLogin.setEnabled(true);
     }
 
     public boolean validate() {
@@ -108,6 +113,12 @@ public class LogActivity extends AppCompatActivity {
         return valid;
     }
 
+    private void showAuthProgress() {
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Authenticating...");
+        progressDialog.show();
+    }
+
     /**
      * Switches to the scan activity.
      */
@@ -117,9 +128,11 @@ public class LogActivity extends AppCompatActivity {
         finish();
     }
 
-    private void openInfoActivity(int groupLocation) {
+    /**
+     * Switches to the info activity.
+     */
+    private void openInfoActivity() {
         Intent intent = new Intent(this, InfoActivity.class);
-        intent.putExtra("groupLocation", String.valueOf(groupLocation));
         startActivity(intent);
         finish();
     }
