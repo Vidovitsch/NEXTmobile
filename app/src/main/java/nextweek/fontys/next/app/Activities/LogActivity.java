@@ -6,7 +6,6 @@ import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -63,7 +62,7 @@ public class LogActivity extends AppCompatActivity {
                     btnLogin.setEnabled(true);
                     Toast.makeText(LogActivity.this, "Incorrect username or password", Toast.LENGTH_SHORT).show();
                 } else {
-                    DBManipulator manipulator = DBManipulator.getInstance();
+                    final DBManipulator manipulator = DBManipulator.getInstance();
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
