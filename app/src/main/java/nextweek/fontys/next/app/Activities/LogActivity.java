@@ -112,7 +112,7 @@ public class LogActivity extends AppCompatActivity {
         }
 
         //Password validation
-        if (password.isEmpty() || password.length() < 6 || password.length() > 16) {
+        if (password.isEmpty() || password.length() < 6 ) {
             txtPassword.setError("between 4 and 16 characters");
             valid = false;
         } else {
