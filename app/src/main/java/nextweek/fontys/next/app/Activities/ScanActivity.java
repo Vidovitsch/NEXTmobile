@@ -44,7 +44,12 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
 
     @Override
     public void handleResult(Result result) {
-        manipulator.validateScan(this, Integer.valueOf(result.getText()));
+        String nr = result.getText();
+        if (nr.length() < 4 && isNumeric(nr)) {
+            manipulator.validateScan(this, Integer.valueOf(result.getText()));
+        } else {
+            loadScanContext(-1);
+        }
     }
 
     @Override
@@ -66,17 +71,7 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
         if (valid) {
             openInfoActivity();
         } else {
-            setContentView(R.layout.activity_scan);
-            ImageView btn = (ImageView) findViewById(R.id.btn_scan);
-            btn.setOnClickListener(new View.OnClickListener() {
-
-                @Override
-                public void onClick(View v) {
-                    askCameraPermission();
-                }
-            });
-
-            showAlertDialog("Table taken", "This table is taken by group " + groupIDTaken);
+            loadScanContext(groupIDTaken);
         }
     }
 
@@ -104,6 +99,24 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
         Intent intent = new Intent(this, InfoActivity.class);
         startActivity(intent);
         finish();
+    }
+
+    private void loadScanContext(int groupIDTaken) {
+        setContentView(R.layout.activity_scan);
+        ImageView btn = (ImageView) findViewById(R.id.btn_scan);
+        btn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                askCameraPermission();
+            }
+        });
+
+        if (groupIDTaken != -1) {
+            showAlertDialog("Table taken", "This table is taken by group " + groupIDTaken);
+        } else {
+            showAlertDialog("Invalid QR-code", "You scanned an invalid QR-code");
+        }
     }
 
     private void askCameraPermission() {
@@ -139,5 +152,9 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
                 })
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .show();
+    }
+
+    private boolean isNumeric(String s) {
+        return s.matches("[-+]?\\d*\\.?\\d+");
     }
 }
