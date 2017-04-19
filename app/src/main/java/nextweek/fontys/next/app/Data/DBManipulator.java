@@ -107,7 +107,7 @@ public class DBManipulator {
                 }
                 setNewGroupLocation(groupLocation);
                 activity.validateScan(true, 0);
-            }
+        }
 
             @Override
             public void onCancelled(DatabaseError databaseError) { }

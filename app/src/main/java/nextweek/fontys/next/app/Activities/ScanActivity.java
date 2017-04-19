@@ -10,8 +10,10 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.zxing.Result;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
@@ -22,6 +24,7 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
 
     private ZXingScannerView mScannerView;
     private final static int MY_PERMISSIONS_REQUEST_CAMERA = 1;
+    private final static String qrKey = "!Next2017!/";
     private  DBManipulator manipulator;
 
     @Override
@@ -45,8 +48,14 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
     @Override
     public void handleResult(Result result) {
         String nr = result.getText();
-        if (nr.length() < 4 && isNumeric(nr)) {
-            manipulator.validateScan(this, Integer.valueOf(result.getText()));
+        if (nr.contains(qrKey)) {
+            int charIndex = nr.indexOf('/');
+            nr = nr.substring(charIndex + 1);
+            if (nr.length() < 4 && isNumeric(nr)) {
+                manipulator.validateScan(this, Integer.valueOf(result.getText()));
+            } else {
+                loadScanContext(-1);
+            }
         } else {
             loadScanContext(-1);
         }
