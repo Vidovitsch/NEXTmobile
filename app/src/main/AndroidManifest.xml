@@ -30,8 +30,10 @@
         <activity
             android:name=".app.Activities.LogActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".app.Activities.InfoActivity" />
-        <activity android:name=".app.Activities.Organisation.AllocActivity"></activity>
+        <activity android:name=".app.Activities.InfoActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".app.Activities.Organisation.AllocActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
