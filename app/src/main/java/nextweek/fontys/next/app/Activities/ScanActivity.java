@@ -22,7 +22,6 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
 
     private ZXingScannerView mScannerView;
     private final static int MY_PERMISSIONS_REQUEST_CAMERA = 1;
-    private final static String qrKey = "!Next2017!";
     private  DBManipulator manipulator;
 
     @Override
@@ -45,12 +44,7 @@ public class ScanActivity extends AppCompatActivity implements ZXingScannerView.
 
     @Override
     public void handleResult(Result result) {
-        String nr = result.getText();
-        if (nr.contains(qrKey)) {
-            manipulator.validateScan(this, result.getText());
-        } else {
-            loadScanContext(-1);
-        }
+        manipulator.validateScan(this, result.getText());
     }
 
     @Override
