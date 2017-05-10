@@ -72,6 +72,7 @@ public class LogActivity extends AppCompatActivity {
                         Toast.makeText(LogActivity.this, "Incorrect username or password", Toast.LENGTH_SHORT).show();
                     } else {
                         //Reset all fields set in de DBManipulatorStu constructor
+                        signedMail = email;
                         manipulator.setSignedInUser();
                         manipulator.setCurrentGroupID();
                     }
@@ -110,10 +111,6 @@ public class LogActivity extends AppCompatActivity {
             txtEmail.setError("enter a valid email address");
             valid = false;
         }
-//        else if (!email.contains("fontys.nl")) {
-//            txtEmail.setError("enter a Fontys email address");
-//            valid = false;
-//        }
         else {
             txtEmail.setError(null);
         }

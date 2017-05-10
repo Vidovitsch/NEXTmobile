@@ -16,4 +16,7 @@
     <!-- Info Activity -->
     <string name="info_txtHeader">Your group is seated at table number</string>
     <string name="info_btnUnCheck">Un-check table</string>
+
+    <!-- Alloc Activity -->
+
 </resources>
