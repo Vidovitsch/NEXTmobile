@@ -2,24 +2,25 @@ package nextweek.fontys.next.app.Activities.Organisation;
 
 import android.Manifest;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Map;
-import java.util.Set;
 
 import com.google.zxing.Result;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 import nextweek.fontys.next.R;
-import nextweek.fontys.next.app.Activities.ScanActivity;
+import nextweek.fontys.next.app.Activities.InfoActivity;
 import nextweek.fontys.next.app.Data.DBManipulatorOrg;
 
 public class AllocActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
@@ -28,7 +29,7 @@ public class AllocActivity extends AppCompatActivity implements ZXingScannerView
     private final static int MY_PERMISSIONS_REQUEST_CAMERA = 1;
     private DBManipulatorOrg manipulator = null;
     private ProgressDialog progressDialog = null;
-    private ArrayList<Integer> groupLocations = null;
+    private Integer selectedLocation;
 
     private TextView npLocation = null;
 
@@ -44,7 +45,8 @@ public class AllocActivity extends AppCompatActivity implements ZXingScannerView
 
     @Override
     public void handleResult(Result result) {
-
+        String code = result.getText();
+        manipulator.validateScan(code, selectedLocation);
     }
 
     @Override
@@ -70,12 +72,20 @@ public class AllocActivity extends AppCompatActivity implements ZXingScannerView
         }
     }
 
+    public void handleScan(boolean successful, String message) {
+        setContentView(R.layout.activity_alloc);
+        if (successful) {
+            Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+        } else {
+            showAlertDialog(message);
+        }
+    }
+
     public void setupViews() {
         progressDialog.dismiss();
 
         npLocation = (TextView) findViewById(R.id.alloc_txtLocation);
         setEventHandlers();
-        groupLocations = manipulator.getGroupLocations();
     }
 
     private void setEventHandlers() {
@@ -86,6 +96,7 @@ public class AllocActivity extends AppCompatActivity implements ZXingScannerView
             public void onClick(View v) {
                 Integer nextLocation = getNextLocation(Integer.valueOf(String.valueOf(npLocation.getText())));
                 npLocation.setText(String.valueOf(nextLocation));
+                selectedLocation = nextLocation;
             }
         });
         //Set event handler for removing location number
@@ -95,6 +106,7 @@ public class AllocActivity extends AppCompatActivity implements ZXingScannerView
             public void onClick(View v) {
                 Integer prevLocation = getPreviousLocation(Integer.valueOf(String.valueOf(npLocation.getText())));
                 npLocation.setText(String.valueOf(prevLocation));
+                selectedLocation = prevLocation;
             }
         });
         //Set event handler for scanning a qr-code
@@ -117,6 +129,7 @@ public class AllocActivity extends AppCompatActivity implements ZXingScannerView
     }
 
     private Integer getNextLocation(Integer oldLocation) {
+        ArrayList<Integer> groupLocations = manipulator.getGroupLocations();
         int index = groupLocations.indexOf(oldLocation);
         if (index == groupLocations.size() - 1) {
             index = -1;
@@ -126,6 +139,7 @@ public class AllocActivity extends AppCompatActivity implements ZXingScannerView
     }
 
     private int getPreviousLocation(Integer oldLocation) {
+        ArrayList<Integer> groupLocations = manipulator.getGroupLocations();
         int index = groupLocations.indexOf(oldLocation);
         if (index == 0) {
             index = groupLocations.size();
@@ -148,5 +162,22 @@ public class AllocActivity extends AppCompatActivity implements ZXingScannerView
                         MY_PERMISSIONS_REQUEST_CAMERA);
             }
         }
+    }
+
+    /**
+     * Shows an alert dialog
+     * Closes application on cancel
+     * @param message of the dialog
+     */
+    private void showAlertDialog(String message) {
+        new AlertDialog.Builder(this)
+                .setTitle("Invalid QR-code")
+                .setMessage(message)
+                .setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                })
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
     }
 }
