@@ -16,20 +16,20 @@ import android.widget.ImageView;
 import com.google.zxing.Result;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 import nextweek.fontys.next.R;
-import nextweek.fontys.next.app.Data.DBManipulator;
+import nextweek.fontys.next.app.Data.DBManipulatorStu;
 
 public class ScanActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
 
     private ZXingScannerView mScannerView;
     private final static int MY_PERMISSIONS_REQUEST_CAMERA = 1;
-    private  DBManipulator manipulator;
+    private DBManipulatorStu manipulator;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scan);
 
-        manipulator = DBManipulator.getInstance();
+        manipulator = DBManipulatorStu.getInstance();
         manipulator.setScanActivity(this);
 
         ImageView btn = (ImageView) findViewById(R.id.btn_scan);

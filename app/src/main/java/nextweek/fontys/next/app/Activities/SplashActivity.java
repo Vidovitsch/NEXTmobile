@@ -22,16 +22,19 @@ import com.google.firebase.auth.FirebaseUser;
 
 import io.codetail.animation.ViewAnimationUtils;
 import nextweek.fontys.next.R;
-import nextweek.fontys.next.app.Data.DBManipulator;
+import nextweek.fontys.next.app.Activities.Organisation.AllocActivity;
+import nextweek.fontys.next.app.Data.DBManipulatorStu;
 
 public class SplashActivity extends AppCompatActivity {
 
+    private final static String studentConst = "@student.fontys.nl";
     private final static int ANIMATION_TIME_CONST = 1000;
     private FirebaseAuth.AuthStateListener mAuthListener;
     private FirebaseAuth mAuth;
     private boolean signed;
+    private String signedMail;
 
-    private DBManipulator manipulator = null;
+    private DBManipulatorStu manipulator = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +47,8 @@ public class SplashActivity extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
-                    manipulator = DBManipulator.getInstance();
+                    manipulator = DBManipulatorStu.getInstance();
+                    signedMail = user.getEmail();
                     signed = true;
                 } else {
                     signed = false;
@@ -74,10 +78,14 @@ public class SplashActivity extends AppCompatActivity {
                                 if (checkConnectivity()) {
                                     if (signed) {
                                         int groupLocation = manipulator.getCurrentGroupLocation();
-                                        if (groupLocation != 0) {
-                                            openInfoActivity();
+                                        if (signedMail.contains(studentConst)) {
+                                            if (groupLocation != 0) {
+                                                openInfoActivity();
+                                            } else {
+                                                openScanActivity();
+                                            }
                                         } else {
-                                            openScanActivity();
+                                            openAllocActivity();
                                         }
                                     } else {
                                         openLogActivity();
@@ -164,6 +172,15 @@ public class SplashActivity extends AppCompatActivity {
      */
     private void openInfoActivity() {
         Intent intent = new Intent(this, InfoActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    /**
+     * Switches to the allocation activity
+     */
+    private void openAllocActivity() {
+        Intent intent = new Intent(this, AllocActivity.class);
         startActivity(intent);
         finish();
     }

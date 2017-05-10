@@ -16,13 +16,16 @@ import com.google.firebase.auth.FirebaseAuth;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 import nextweek.fontys.next.R;
-import nextweek.fontys.next.app.Data.DBManipulator;
+import nextweek.fontys.next.app.Activities.Organisation.AllocActivity;
+import nextweek.fontys.next.app.Data.DBManipulatorStu;
 
 public class LogActivity extends AppCompatActivity {
 
+    private final static String studentConst = "@student.fontys.nl";
     private FirebaseAuth mAuth;
     private ProgressDialog progressDialog;
-    private DBManipulator manipulator;
+    private DBManipulatorStu manipulator;
+    private String signedMail;
 
     @InjectView(R.id.input_email) EditText txtEmail;
     @InjectView(R.id.input_password) EditText txtPassword;
@@ -33,7 +36,7 @@ public class LogActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_log);
 
-        manipulator = DBManipulator.getInstance();
+        manipulator = DBManipulatorStu.getInstance();
         manipulator.setLogActivity(this);
 
         mAuth = FirebaseAuth.getInstance();
@@ -68,7 +71,7 @@ public class LogActivity extends AppCompatActivity {
                         btnLogin.setEnabled(true);
                         Toast.makeText(LogActivity.this, "Incorrect username or password", Toast.LENGTH_SHORT).show();
                     } else {
-                        //Reset all fields set in de DBManipulator constructor
+                        //Reset all fields set in de DBManipulatorStu constructor
                         manipulator.setSignedInUser();
                         manipulator.setCurrentGroupID();
                     }
@@ -82,10 +85,14 @@ public class LogActivity extends AppCompatActivity {
      */
     public void onLoginSuccess(int groupLocation) {
         progressDialog.dismiss();
-        if (groupLocation != 0) {
-            openInfoActivity();
+        if (signedMail.contains(studentConst)) {
+            if (groupLocation != 0) {
+                openInfoActivity();
+            } else {
+                openScanActivity();
+            }
         } else {
-            openScanActivity();
+            openAllocActivity();
         }
     }
 
@@ -145,6 +152,15 @@ public class LogActivity extends AppCompatActivity {
      */
     private void openInfoActivity() {
         Intent intent = new Intent(this, InfoActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
+    /**
+     * Switches to the allocation activity
+     */
+    private void openAllocActivity() {
+        Intent intent = new Intent(this, AllocActivity.class);
         startActivity(intent);
         finish();
     }

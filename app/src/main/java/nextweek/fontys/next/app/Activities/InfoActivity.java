@@ -10,12 +10,12 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import nextweek.fontys.next.R;
-import nextweek.fontys.next.app.Data.DBManipulator;
+import nextweek.fontys.next.app.Data.DBManipulatorStu;
 
 public class InfoActivity extends AppCompatActivity {
 
     private TextView txtLocation = null;
-    private DBManipulator manipulator = null;
+    private DBManipulatorStu manipulator = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,7 @@ public class InfoActivity extends AppCompatActivity {
 
         txtLocation = (TextView) findViewById(R.id.txtLocation);
 
-        manipulator = DBManipulator.getInstance();
+        manipulator = DBManipulatorStu.getInstance();
         manipulator.setInfoActivity(this);
 
         updateGroupLocation();
@@ -72,7 +72,7 @@ public class InfoActivity extends AppCompatActivity {
                 .setMessage(message)
                 .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        DBManipulator.getInstance().setNewGroupLocation(0);
+                        DBManipulatorStu.getInstance().setNewGroupLocation(0);
                         openScanActivity();
                     }
                 })
