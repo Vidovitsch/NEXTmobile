@@ -93,25 +93,45 @@ public class DBManipulator {
      * @param activity: scan activity
      * @param groupLocation: scanned number
      */
-    public void validateScan(final ScanActivity activity, final int groupLocation) {
-        DatabaseReference ref = database.child("Group").getRef();
-        ref.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    int location = Integer.valueOf(String.valueOf(snapshot.child("Location").getValue()));
-                    if (location == groupLocation) {
-                        activity.validateScan(false, Integer.valueOf(String.valueOf(snapshot.getKey())));
-                        return;
+    public void validateScan(final ScanActivity activity, final String scannedText) {
+
+            //Convert scanned text to group location
+            DatabaseReference ref = database.child("GroupLocation");
+            ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    for (DataSnapshot ds : dataSnapshot.getChildren()) {
+                        if (String.valueOf(ds.getValue()).equals(scannedText)) {
+                            //Table number fetched
+                            final int tableNumber = Integer.valueOf(ds.getKey());
+                            //Search group seated at the fetched table number
+                            DatabaseReference ref2 = database.child("Group").getRef();
+                            ref2.addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(DataSnapshot dataSnapshot) {
+                                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                                        int location = Integer.valueOf(String.valueOf(snapshot.child("Location").getValue()));
+                                        if (location == tableNumber) {
+                                            activity.validateScan(false, Integer.valueOf(String.valueOf(snapshot.getKey())));
+                                            return;
+                                        }
+                                    }
+                                    setNewGroupLocation(tableNumber);
+                                    activity.validateScan(true, 0);
+                                }
+
+                                @Override
+                                public void onCancelled(DatabaseError databaseError) { }
+                            });
+                        }
                     }
                 }
-                setNewGroupLocation(groupLocation);
-                activity.validateScan(true, 0);
-        }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) { }
-        });
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
 
     }
 
