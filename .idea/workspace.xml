@@ -122,11 +122,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DBManipulator.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="DBManipulator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Data/DBManipulator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="106" column="77" selection-start-line="106" selection-start-column="77" selection-end-line="106" selection-end-column="77" />
+            <state relative-caret-position="428">
+              <caret line="128" column="71" selection-start-line="128" selection-start-column="71" selection-end-line="128" selection-end-column="71" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -134,10 +134,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ScanActivity.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ScanActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Activities/ScanActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
+            <state relative-caret-position="-14">
               <caret line="49" column="61" selection-start-line="49" selection-start-column="61" selection-end-line="49" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -2028,8 +2028,8 @@
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Activities/LogActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Activities/SplashActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Data/DBManipulator.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Activities/ScanActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Data/DBManipulator.java" />
       </list>
     </option>
   </component>
@@ -2894,16 +2894,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Activities/InfoActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="48" column="41" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Activities/LogActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
@@ -2914,20 +2904,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Data/DBManipulator.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Activities/ScanActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="106" column="77" selection-start-line="106" selection-start-column="77" selection-end-line="106" selection-end-column="77" />
+        <state relative-caret-position="-14">
+          <caret line="49" column="61" selection-start-line="49" selection-start-column="61" selection-end-line="49" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Activities/ScanActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Activities/InfoActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="49" column="61" selection-start-line="49" selection-start-column="61" selection-end-line="49" selection-end-column="61" />
+        <state relative-caret-position="139">
+          <caret line="48" column="41" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/nextweek/fontys/next/app/Data/DBManipulator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="128" column="71" selection-start-line="128" selection-start-column="71" selection-end-line="128" selection-end-column="71" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

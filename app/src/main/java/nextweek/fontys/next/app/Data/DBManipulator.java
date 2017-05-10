@@ -24,6 +24,7 @@ public class DBManipulator {
 
     private String currentGroupID = null;
     private int currentGroupLocation = -1;
+    private boolean resultExists = false;
 
     private InfoActivity infoActivity = null;
     private ScanActivity scanActivity = null;
@@ -91,10 +92,9 @@ public class DBManipulator {
     /**
      * Validates the made scan.
      * @param activity: scan activity
-     * @param groupLocation: scanned number
+     * @param scannedText: scanned text
      */
     public void validateScan(final ScanActivity activity, final String scannedText) {
-
             //Convert scanned text to group location
             DatabaseReference ref = database.child("GroupLocation");
             ref.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -102,6 +102,7 @@ public class DBManipulator {
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     for (DataSnapshot ds : dataSnapshot.getChildren()) {
                         if (String.valueOf(ds.getValue()).equals(scannedText)) {
+                            resultExists = true;
                             //Table number fetched
                             final int tableNumber = Integer.valueOf(ds.getKey());
                             //Search group seated at the fetched table number
@@ -125,6 +126,12 @@ public class DBManipulator {
                             });
                         }
                     }
+                    //Checks if the scanned text exists in the database
+                    if (!resultExists) {
+                        activity.validateScan(false, -1);
+                    } else {
+                        resultExists = false;
+                    }
                 }
 
                 @Override
@@ -132,7 +139,6 @@ public class DBManipulator {
 
                 }
             });
-
     }
 
     /**
