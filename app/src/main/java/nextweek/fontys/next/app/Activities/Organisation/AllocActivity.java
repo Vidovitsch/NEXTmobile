@@ -20,10 +20,11 @@ import java.util.ArrayList;
 import com.google.zxing.Result;
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 import nextweek.fontys.next.R;
-import nextweek.fontys.next.app.Activities.InfoActivity;
 import nextweek.fontys.next.app.Data.DBManipulatorOrg;
 
 public class AllocActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
+
+    private boolean compeleted = false;
 
     private ZXingScannerView mScannerView;
     private final static int MY_PERMISSIONS_REQUEST_CAMERA = 1;
@@ -37,10 +38,15 @@ public class AllocActivity extends AppCompatActivity implements ZXingScannerView
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alloc);
-
         //Fetching data needed for allocating QR-codes
         manipulator = new DBManipulatorOrg(this);
-        showFetchProgress();
+        if (manipulator.getGroupLocations().isEmpty()) {
+            compeleted = true;
+            setContentView(R.layout.activity_alloc_completed);
+        } else {
+            setContentView(R.layout.activity_alloc);
+            showFetchProgress();
+        }
     }
 
     @Override
@@ -76,16 +82,22 @@ public class AllocActivity extends AppCompatActivity implements ZXingScannerView
         setContentView(R.layout.activity_alloc);
         if (successful) {
             Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+            if (manipulator.getGroupLocations().isEmpty()) {
+                compeleted = true;
+                setContentView(R.layout.activity_alloc_completed);
+            }
         } else {
             showAlertDialog(message);
         }
     }
 
     public void setupViews() {
-        progressDialog.dismiss();
+        if (!compeleted) {
+            progressDialog.dismiss();
 
-        npLocation = (TextView) findViewById(R.id.alloc_txtLocation);
-        setEventHandlers();
+            npLocation = (TextView) findViewById(R.id.alloc_txtLocation);
+            setEventHandlers();
+        }
     }
 
     private void setEventHandlers() {
