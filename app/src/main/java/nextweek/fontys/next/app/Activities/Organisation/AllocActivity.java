@@ -24,7 +24,7 @@ import nextweek.fontys.next.app.Data.DBManipulatorOrg;
 
 public class AllocActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
 
-    private boolean compeleted = false;
+    private boolean completed = false;
 
     private ZXingScannerView mScannerView;
     private final static int MY_PERMISSIONS_REQUEST_CAMERA = 1;
@@ -40,13 +40,6 @@ public class AllocActivity extends AppCompatActivity implements ZXingScannerView
         setContentView(R.layout.activity_alloc);
         //Fetching data needed for allocating QR-codes
         manipulator = new DBManipulatorOrg(this);
-        if (manipulator.getGroupLocations().isEmpty()) {
-            compeleted = true;
-            setContentView(R.layout.activity_alloc_completed);
-        } else {
-            setContentView(R.layout.activity_alloc);
-            showFetchProgress();
-        }
     }
 
     @Override
@@ -83,7 +76,7 @@ public class AllocActivity extends AppCompatActivity implements ZXingScannerView
         if (successful) {
             Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
             if (manipulator.getGroupLocations().isEmpty()) {
-                compeleted = true;
+                completed = true;
                 setContentView(R.layout.activity_alloc_completed);
             }
         } else {
@@ -92,7 +85,15 @@ public class AllocActivity extends AppCompatActivity implements ZXingScannerView
     }
 
     public void setupViews() {
-        if (!compeleted) {
+        if (manipulator.getGroupLocations().isEmpty()) {
+            completed = true;
+            setContentView(R.layout.activity_alloc_completed);
+        } else {
+            setContentView(R.layout.activity_alloc);
+            showFetchProgress();
+        }
+
+        if (!completed) {
             progressDialog.dismiss();
 
             npLocation = (TextView) findViewById(R.id.alloc_txtLocation);
